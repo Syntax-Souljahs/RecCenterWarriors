@@ -16,9 +16,9 @@ const NavBar = () => {
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand as={NavLink} to="/">
-          <h4><Image roundedCircle src="/images/campus-center.png" width="50px"/> Gym Buddy</h4>
+          <h4><Image roundedCircle src="/images/campus-center.png" width="50px" /> Gym Buddy</h4>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
             {currentUser ? ([
