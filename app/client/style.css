@@ -20,6 +20,31 @@ body {
   --bs-alert-bg: var(--matr-navbar-bg);
 }
 
+#landing-page {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: 125px;
+}
+
+#landing-page h1 {
+  color: #0e500e;
+  font-size: 50px;
+  text-shadow:
+      -1px -1px 0 white,
+      1px -1px 0 white,
+      -1px 1px 0 white,
+      1px 1px 0 white;
+}
+
+#landing-page h3 {
+  color: black;
+  font-size:30px;
+  text-shadow:
+      -1px -1px 0 white,
+      1px -1px 0 white,
+      -1px 1px 0 white,
+      1px 1px 0 white;
+}
+
 /* Define custom styles */
 .gray-background {
   background-color: var(--matr-navbar-bg);
