@@ -7,27 +7,86 @@
   --matr-navbar-bg-rgb: 236, 236, 236;
 }
 
+
 /* Change bootstrap variable values.
  See https://getbootstrap.com/docs/5.2/customize/css-variables/
  */
 body {
-  background: fixed center url("images/UHM-background.jpeg");
-  --bs-light-rgb: var(--matr-navbar-bg-rgb);
+  background: url("/doc/UHM-background.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  height: 800px;
 }
+
+#center-image {
+  background: url("/images/UHM-background.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  height: 800px;
+  font-family: noticia text,serif;
+  color: whitesmoke;
+}
+
+.transparent-card {
+  background-color: transparent !important; /* Important to override Bootstrap styles */
+}
+
+#signin-page{
+  background: url("/images/UHM-background.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  height: 500px;
+  h2 {
+    color: white;
+  }
+}
+
+#signup-page{
+  background: url("/images/UHM-background.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  height: 500px;
+  h2 {
+    color: white;
+  }
+}
+
+#gym-buddy {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 
 /* Set the alert background on the signin and signup pages. */
 #signin-page .alert-light, #signup-page .alert-light {
-  --bs-alert-bg: var(--matr-navbar-bg);
+  background-color: greenyellow;
 }
 
 /* Define custom styles */
 .gray-background {
-  background-color: var(--matr-navbar-bg);
-  color: var(--bs-dark);
+  background-image: url('doc/UHM-background.jpeg'); /* Replace 'your-image-url.jpg' with the URL or path of your image */
+  background-size: cover;
   padding-top: 10px;
   padding-bottom: 20px;
 }
 
+.navbar {
+  --bs-navbar-padding-x: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.navbar-nav {
+  --bs-nav-link-padding-x: 0.5rem;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.nav-item {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top:2px;
+  padding-bottom: 0.5rem;
+  color: #E33E19;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  cursor: pointer!important;
+}
 
 .active.nav-item {
   border-top-width: 10px;
@@ -35,8 +94,14 @@ body {
   color: black;
 }
 /* added */
-.navbar-nav .nav-link:hover {
-  border-top: 3px solid rgba(5, 124, 17, 0.42) !important;
-  padding-top: 0;
+.nav-item:hover {
+  border-top: 3px solid #E33E19!important;
+  padding-top:0;
 }
 
+.btn:hover {
+  color: black;
+  background-color: #ffe18c;
+  border: none;
+  transition: background-color 0.3s ease;
+}
