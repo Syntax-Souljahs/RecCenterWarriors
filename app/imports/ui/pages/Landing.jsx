@@ -8,7 +8,7 @@ const Landing = () => (
     <Row className="align-middle text-center">
       <Col xs={2} />
       <Col xs={8} className="d-flex flex-column justify-content-center">
-        <h1>Welcome to Gym Buddy!</h1>
+        <h1>Welcome to Rec Center Warriors</h1>
         <h3>
           Get started by clicking <br />
           one of the buttons below <br />
