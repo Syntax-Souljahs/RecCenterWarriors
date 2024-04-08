@@ -20,6 +20,11 @@ body {
   --bs-alert-bg: var(--matr-navbar-bg);
 }
 
+#guide-page {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
 /* Define custom styles */
 .gray-background {
   background-color: var(--matr-navbar-bg);
