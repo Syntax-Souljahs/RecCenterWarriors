@@ -64,6 +64,40 @@ body {
   background-color: greenyellow;
 }
 
+#landing-page {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: 125px;
+}
+
+#landing-page h1 {
+  color: #0e500e;
+  font-size: 50px;
+  text-shadow:
+      -1px -1px 0 white,
+      1px -1px 0 white,
+      -1px 1px 0 white,
+      1px 1px 0 white;
+}
+
+#landing-page h3 {
+  color: black;
+  font-size:30px;
+  text-shadow:
+      -1px -1px 0 white,
+      1px -1px 0 white,
+      -1px 1px 0 white,
+      1px 1px 0 white;
+}
+
+#view-profile-page h2{
+  color: white;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+}
+
 /* Define custom styles */
 .gray-background {
   background-image: url('doc/UHM-background.jpeg'); /* Replace 'your-image-url.jpg' with the URL or path of your image */
