@@ -5,7 +5,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -15,29 +15,15 @@ const SignUp = ({ location }) => {
   const [redirectToReferer, setRedirectToRef] = useState(false);
 
   const schema = new SimpleSchema({
-    user: String,
-    firstName: String,
-    lastName: String,
-    year: {
-      type: String,
-      allowedValues: ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Faculty'],
-      defaultValue: 'Freshman',
-    },
-    major: String,
     email: String,
-    interests: {
-      type: String,
-      allowedValues: ['General Health/Fitness', 'Bodybuilding/Aesthetics', 'Powerlifting', 'Crossfit', 'Other'],
-      defaultValue: 'General Health/Fitness',
-    },
     password: String,
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
-    const { user, firstName, lastName, year, major, email, interests, password } = doc;
-    Accounts.createUser({ user, firstName, lastName, year, major, email, interests, password }, (err) => {
+    const { email, password } = doc;
+    Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         setError(err.reason);
       } else {
@@ -63,23 +49,8 @@ const SignUp = ({ location }) => {
           <AutoForm schema={bridge} onSubmit={data => submit(data)}>
             <Card>
               <Card.Body>
-                <Row>
-                  <Col><TextField name="user" placeholder="Username" /></Col>
-                </Row>
-                <Row>
-                  <Col><TextField name="firstName" placeholder="First Name" /></Col>
-                  <Col><TextField name="lastName" placeholder="Last Name" /></Col>
-                </Row>
-                <Row>
-                  <Col><SelectField name="year" placeholder="Year" /></Col>
-                  <Col><TextField name="major" placeholder="Major" /></Col>
-                </Row>
-
-                <Row>
-                  <Col><TextField name="email" placeholder="E-mail Address" /></Col>
-                  <Col><TextField name="password" placeholder="Password" type="password" /></Col>
-                </Row>
-                <Col><SelectField name="interests" placeholder="Gym / Health Interests / Goals" /></Col>
+                <TextField name="email" placeholder="E-mail address" />
+                <TextField name="password" placeholder="Password" type="password" />
                 <ErrorsField />
                 <SubmitField />
               </Card.Body>

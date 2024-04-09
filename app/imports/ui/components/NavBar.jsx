@@ -4,9 +4,10 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
-import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { BoxArrowRight, PersonFill, PersonPlusFill, PersonSquare } from 'react-bootstrap-icons';
 
 const NavBar = () => {
+  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { currentUser } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
   }), []);
@@ -22,10 +23,10 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
             {currentUser ? (
-              <>
-                <Nav.Link id="add-stuff-nav" as={NavLink} to="/add">Find A Buddy</Nav.Link>
-                <Nav.Link id="list-stuff-nav" as={NavLink} to="/list">Exercises</Nav.Link>
-              </>
+              [
+                <Nav.Link id="add-stuff-nav" as={NavLink} to="/add" key="add">Find A Buddy</Nav.Link>,
+                <Nav.Link id="list-stuff-nav" as={NavLink} to="/list" key="list">Exercises</Nav.Link>,
+              ]
             ) : (
               <Nav.Link id="list-stuff-nav" as={NavLink} to="/list">Exercises</Nav.Link>
             )}
@@ -34,12 +35,15 @@ const NavBar = () => {
             )}
           </Nav>
           <Nav className="justify-content-end">
+            {/* New navbar item for logged-in users */}
             {currentUser !== '' && (
               <>
-                <Nav.Link as={NavLink} to="/workout-sched">Workout Schedule</Nav.Link>
+                <Nav.Link as={NavLink} to="/workout-sched">
+                  Workout Schedule
+                </Nav.Link>
                 <NavDropdown id="navbar-current-user" title={currentUser}>
                   <NavDropdown.Item id="navbar-view-profile" as={NavLink} to="/viewprofile">
-                    <PersonFill />
+                    <PersonSquare />
                     View Profile
                   </NavDropdown.Item>
                   <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
@@ -50,6 +54,7 @@ const NavBar = () => {
               </>
             )}
 
+            {/* Dropdown for login/logout */}
             {currentUser === '' ? (
               <NavDropdown id="login-dropdown" title="Login">
                 <NavDropdown.Item id="login-dropdown-sign-in" as={NavLink} to="/signin">
@@ -61,7 +66,9 @@ const NavBar = () => {
                   Sign up
                 </NavDropdown.Item>
               </NavDropdown>
-            ) : null}
+            ) : (
+              null // No action needed here since it's handled in the logged-in condition above
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
