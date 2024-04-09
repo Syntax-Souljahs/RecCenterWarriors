@@ -1,4 +1,9 @@
 {
+  "monti": {
+    "appId": "6sf3so9vcTZ5yHNm4",
+    "appSecret": "07402c36-eeaa-4f26-aef7-0ef2a895b8b3"
+  },
+
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" }
@@ -11,6 +16,7 @@
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
   "defaultProfiles": [
-    { "firstName": "John", "lastName": "Doe", "Year": "Sophomore", "major": "Computer Science","email": "john@foo.com", "interests":  "General Health/Fitness"}
+    { "firstName": "John", "lastName": "Doe", "year": "Sophomore", "major": "Computer Science","email": "john@foo.com", "interests":  "General Health/Fitness"},
+    { "firstName": "Admin", "lastName": "Losefield", "year": "Sophomore", "major": "Computer Science","email": "admin@foo.com", "interests":  "General Health/Fitness"}
   ]
 }
