@@ -47,11 +47,17 @@ body {
   }
 }
 
+#findbuddy-page {
+  background: url("/images/UHM-background.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  height: 500px;
+}
+
+
 #gym-buddy {
   padding-left: 0;
   padding-right: 0;
 }
-
 
 /* Set the alert background on the signin and signup pages. */
 #signin-page .alert-light, #signup-page .alert-light {
