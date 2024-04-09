@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -17,9 +16,11 @@ const formSchema = new SimpleSchema({
   },
 });
 
+// eslint-disable-next-line no-unused-vars
 const bridge = new SimpleSchema2Bridge(formSchema);
 
 const Findbuddy = () => {
+  // eslint-disable-next-line no-unused-vars
   const submit = (data, formRef) => {
     const { name, quantity, condition } = data;
     const owner = Meteor.user().username;
@@ -62,7 +63,7 @@ const Findbuddy = () => {
           </Card>
         </Col>
       </Row>
-      </Container>
+    </Container>
   );
 };
 
