@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
-import { AutoForm, SubmitField } from 'uniforms-bootstrap5'; // Import AutoForm for each card
+import { AutoForm, SubmitField } from 'uniforms-bootstrap5'; 
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { Stuffs } from '../../api/stuff/Stuff';
