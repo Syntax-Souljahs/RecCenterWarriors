@@ -23,7 +23,7 @@ if (Stuffs.collection.find().count() === 0) {
   }
 }
 
-// Initialize the StuffsCollection if empty.
+// Initialize the ProfileCollection if empty.
 if (Profiles.collection.find().count() === 0) {
   if (Meteor.settings.defaultProfiles) {
     console.log('Creating default data.');

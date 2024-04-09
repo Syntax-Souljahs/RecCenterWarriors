@@ -11,6 +11,7 @@
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
   "defaultProfiles": [
-    { "firstName": "John", "lastName": "Doe", "Year": "Sophomore", "major": "Computer Science","email": "john@foo.com", "interests":  "General Health/Fitness"}
+    { "firstName": "John", "lastName": "Doe", "year": "Sophomore", "major": "Computer Science","email": "john@foo.com", "interests":  "General Health/Fitness"},
+    { "firstName": "Admin", "lastName": "Losefield", "year": "Sophomore", "major": "Computer Science","email": "admin@foo.com", "interests":  "General Health/Fitness"}
   ]
 }

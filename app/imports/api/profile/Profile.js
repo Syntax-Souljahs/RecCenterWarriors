@@ -34,6 +34,6 @@ class ProfilesCollection {
 
 /**
  * The singleton instance of the StuffsCollection.
- * @type {StuffsCollection}
+ * @type {ProfilesCollection}
  */
 export const Profiles = new ProfilesCollection();
