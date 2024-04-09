@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
-import { AutoForm, SubmitField } from 'uniforms-bootstrap5'; 
+import { AutoForm, SubmitField } from 'uniforms-bootstrap5';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { Stuffs } from '../../api/stuff/Stuff';
@@ -46,9 +46,9 @@ const Findbuddy = () => {
                 <Card.Title>Person 1</Card.Title>
                 <Card.Text>
                   image<br />
-                  other description
+                  description
                 </Card.Text>
-                <SubmitField value="Find Buddy" />
+                <SubmitField value="Buddy Up" />
               </Card.Body>
             </Card>
           </AutoForm>
@@ -60,9 +60,9 @@ const Findbuddy = () => {
                 <Card.Title>Person 2</Card.Title>
                 <Card.Text>
                   image<br />
-                  other description
+                  description
                 </Card.Text>
-                <SubmitField value="Find Buddy" />
+                <SubmitField value="Buddy Up" />
               </Card.Body>
             </Card>
           </AutoForm>
