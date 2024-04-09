@@ -7,7 +7,6 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { Stuffs } from '../../api/stuff/Stuff';
 
-// Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
   name: String,
   quantity: Number,
@@ -20,10 +19,7 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/* Renders the AddStuff page for adding a document. */
-const AddStuff = () => {
-
-  // On submit, insert the data.
+const Findbuddy = () => {
   const submit = (data, formRef) => {
     const { name, quantity, condition } = data;
     const owner = Meteor.user().username;
@@ -40,28 +36,34 @@ const AddStuff = () => {
     );
   };
 
-  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
-  let fRef = null;
   return (
-    <Container className="py-3">
-      <Row className="justify-content-center">
-        <Col xs={5}>
-          <Col className="text-center"><h2>Add Stuff</h2></Col>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
-            <Card>
-              <Card.Body>
-                <TextField name="name" />
-                <NumField name="quantity" decimal={null} />
-                <SelectField name="condition" />
-                <SubmitField value="Submit" />
-                <ErrorsField />
-              </Card.Body>
-            </Card>
-          </AutoForm>
+    <Container id="findbuddy-page">
+      <Row className="mt-5">
+        <Col>
+          <Card>
+            <Card.Body>
+              <Card.Title>Person 1</Card.Title>
+              <Card.Text>
+                description<br />
+                other description
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <Card.Body>
+              <Card.Title>Person 2</Card.Title>
+              <Card.Text>
+                description<br />
+                other description
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
-    </Container>
+      </Container>
   );
 };
 
-export default AddStuff;
+export default Findbuddy;
