@@ -32,9 +32,13 @@ body {
   --bs-alert-bg: var(--matr-navbar-bg);
 }
 
+#guide-page {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
 #landing-page {
   background-color: rgba(0, 0, 0, 0.6);
-  margin-top: 125px;
 }
 
 #landing-page h1 {

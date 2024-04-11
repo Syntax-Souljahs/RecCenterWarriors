@@ -2,22 +2,22 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Col, Container, Row, Table } from 'react-bootstrap';
-import { Stuffs } from '../../api/stuff/Stuff';
-import StuffItemAdmin from '../components/StuffItemAdmin';
+import { Profiles } from '../../api/profile/Profile';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ProfilesAdmin from '../components/ProfilesAdmin';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItemAdmin> to render each row. */
-const ListStuffAdmin = () => {
+const AdminPage = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { stuffs, ready } = useTracker(() => {
+  const { profiles, ready } = useTracker(() => {
     // Get access to Stuff documents.
-    const subscription = Meteor.subscribe(Stuffs.adminPublicationName);
+    const subscription = Meteor.subscribe(Profiles.adminPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Stuff documents
-    const items = Stuffs.collection.find({}).fetch();
+    const items = Profiles.collection.find({}).fetch();
     return {
-      stuffs: items,
+      profiles: items,
       ready: rdy,
     };
   }, []);
@@ -38,7 +38,7 @@ const ListStuffAdmin = () => {
               </tr>
             </thead>
             <tbody>
-              {stuffs.map((stuff) => <StuffItemAdmin key={stuff.firstName} stuff={stuff} collection={Stuffs.collection} />)}
+              {profiles.map((profile) => <ProfilesAdmin key={profile.firstName} profile={profile} collection={Profiles.collection} />)}
             </tbody>
           </Table>
         </Col>
@@ -47,4 +47,4 @@ const ListStuffAdmin = () => {
   ) : <LoadingSpinner />);
 };
 
-export default ListStuffAdmin;
+export default AdminPage;
