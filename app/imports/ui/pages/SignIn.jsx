@@ -46,7 +46,7 @@ const SignIn = () => {
                       id="signin-form-email"
                       name="email"
                       placeholder="E-mail or Username"
-                      label="Email/Username" // Change the label here
+                      label="Email/Username"
                     />
                   </Col>
                   <Col md={6}>
@@ -55,7 +55,7 @@ const SignIn = () => {
                       name="password"
                       placeholder="Password"
                       type="password"
-                      label="Password" // No change needed here
+                      label="Password"
                     />
                   </Col>
                 </Row>
