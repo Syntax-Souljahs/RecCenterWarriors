@@ -5,7 +5,8 @@ import { Button } from 'react-bootstrap';
 import { Trash } from 'react-bootstrap-icons';
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
-const StuffItemAdmin = ({ stuff, collection }) => {
+// eslint-disable-next-line react/prop-types
+const ProfilesAdmin = ({ profile, collection }) => {
   const deleteProfile = (profileName) => {
     console.log(`${profileName} profile was deleted`); // later add as parameter reason for deletion, and later add ban button
     collection.remove(profileName);
@@ -13,23 +14,23 @@ const StuffItemAdmin = ({ stuff, collection }) => {
 
   return (
     <tr>
-      <td>{stuff.firstName}</td>
-      <td>{stuff.lastName}</td>
-      <td>{stuff.year}</td>
-      <td>{stuff.major}</td>
-      <td>{stuff.email}</td>
-      <td>{stuff.interests}</td>
+      <td>{profile.firstName}</td>
+      <td>{profile.lastName}</td>
+      <td>{profile.year}</td>
+      <td>{profile.major}</td>
+      <td>{profile.email}</td>
+      <td>{profile.interests}</td>
       <td>
-        <Link to={`/edit/${stuff.firstName}`}>Edit</Link>
+        <Link to={`/edit/${profile.firstName}`}>Edit</Link>
       </td>
-      <td><Button variant="danger" onClick={() => deleteProfile(stuff.firstName)}><Trash /></Button></td>
+      <td><Button variant="danger" onClick={() => deleteProfile(profile.firstName)}><Trash /></Button></td>
     </tr>
   );
 };
 
 // Require a document to be passed to this component.
-StuffItemAdmin.propTypes = {
-  stuff: PropTypes.shape({
+ProfilesAdmin.propTypes = {
+  profile: PropTypes.shape({
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     year: PropTypes.string,
@@ -41,4 +42,4 @@ StuffItemAdmin.propTypes = {
   collection: PropTypes.object.isRequired,
 };
 
-export default StuffItemAdmin;
+export default ProfilesAdmin;
