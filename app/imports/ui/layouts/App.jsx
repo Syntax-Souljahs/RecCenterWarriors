@@ -10,6 +10,8 @@ import ListStuff from '../pages/ListStuff';
 import AdminPage from '../pages/AdminPage';
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
+import ListStuffAdmin from '../pages/ListStuffAdmin';
+import Findbuddy from '../pages/Findbuddy';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
