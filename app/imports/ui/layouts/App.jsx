@@ -7,13 +7,10 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListStuff from '../pages/ListStuff';
-<<<<<<< HEAD
 import AdminPage from '../pages/AdminPage';
 import AddStuff from '../pages/AddStuff';
-=======
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import Findbuddy from '../pages/Findbuddy';
->>>>>>> main
 import EditStuff from '../pages/EditStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import Findbuddy from '../pages/Findbuddy';
@@ -51,10 +48,7 @@ const App = () => {
           <Route path="/add" element={<ProtectedRoute><Findbuddy /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
           <Route path="/viewprofile" element={<ProtectedRoute><ViewProfile /></ProtectedRoute>} />
-<<<<<<< HEAD
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><AdminPage /></AdminProtectedRoute>} />
-=======
->>>>>>> main
           <Route path="/workout-sched" element={<ProtectedRoute><WorkoutSchedule /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
