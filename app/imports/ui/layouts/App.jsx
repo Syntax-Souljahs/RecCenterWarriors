@@ -15,6 +15,7 @@ import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
 import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
+import Guide from '../pages/Guide';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ViewProfile from '../pages/ViewProfile';
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
+          <Route path="/guide" element={<Guide />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><Findbuddy /></ProtectedRoute>} />
