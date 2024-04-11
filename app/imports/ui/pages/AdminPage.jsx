@@ -22,7 +22,7 @@ const AdminPage = () => {
     };
   }, []);
   return (ready ? (
-    <Container className="py-3">
+    <Container id="view-profile-page" className="py-3">
       <Row className="justify-content-center">
         <Col md={7}>
           <Col><h2>Profiles</h2></Col>
@@ -38,7 +38,7 @@ const AdminPage = () => {
               </tr>
             </thead>
             <tbody>
-              {profiles.map((profile) => <ProfilesAdmin key={profile.firstName} profile={profile} collection={Profiles.collection} />)}
+              {profiles.map((profile) => <ProfilesAdmin key={profile._id} profile={profile} collection={Profiles.collection} />)}
             </tbody>
           </Table>
         </Col>
