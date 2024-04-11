@@ -15,6 +15,18 @@ body {
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
 }
 
+#signin-page {
+  h2 {
+    color: #0e500e;
+    font-size: 50px;
+    text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+  }
+}
+
 /* Set the alert background on the signin and signup pages. */
 #signin-page .alert-light, #signup-page .alert-light {
   --bs-alert-bg: var(--matr-navbar-bg);
