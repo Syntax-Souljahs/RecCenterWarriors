@@ -25,18 +25,20 @@ const ListStuffAdmin = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col md={7}>
-          <Col className="text-center"><h2>List Stuff (Admin)</h2></Col>
+          <Col className="text-center"><h2>Profiles</h2></Col>
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Condition</th>
-                <th>Owner</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Year</th>
+                <th>Major</th>
+                <th>Email</th>
+                <th>Interests</th>
               </tr>
             </thead>
             <tbody>
-              {stuffs.map((stuff) => <StuffItemAdmin key={stuff._id} stuff={stuff} />)}
+              {stuffs.map((stuff) => <StuffItemAdmin key={stuff.firstName} stuff={stuff} collection={Stuffs.collection} />)}
             </tbody>
           </Table>
         </Col>
