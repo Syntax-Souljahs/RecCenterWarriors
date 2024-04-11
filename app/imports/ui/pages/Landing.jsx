@@ -28,7 +28,7 @@ const Landing = () => {
           <Row className="align-middle">
             <Col xs={5} />
             <Col xs={1}>
-              <Button as={Link} size="lg" variant="dark">Guide</Button>
+              <Button as={Link} size="lg" variant="dark" to="/guide">Guide</Button>
             </Col>
             <Col xs={1}>
               <Button as={Link} size="lg" variant="dark" style={{ whiteSpace: 'nowrap' }} to="/SignUp">Sign Up</Button>
