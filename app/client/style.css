@@ -20,9 +20,13 @@ body {
   --bs-alert-bg: var(--matr-navbar-bg);
 }
 
+#guide-page {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
 #landing-page {
   background-color: rgba(0, 0, 0, 0.6);
-  margin-top: 125px;
 }
 
 #landing-page h1 {
@@ -52,6 +56,12 @@ body {
       1px -1px 0 black,
       -1px 1px 0 black,
       1px 1px 0 black;
+}
+
+#findbuddy-page {
+  background: url("/images/UHM-background.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  height: 500px;
 }
 
 /* Define custom styles */
