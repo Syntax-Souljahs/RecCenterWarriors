@@ -3,8 +3,8 @@ import { Col, Container } from 'react-bootstrap';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 const Footer = () => (
-  <footer className="mt-auto py-3 bg-light">
-    <Container>
+  <footer id="footer-page" className="mt-auto py-3">
+    <Container className="bg-transparent text-light">
       <Col className="text-center">
         Syntax Souljahs
         {' '}
@@ -14,7 +14,7 @@ const Footer = () => (
         Honolulu, HI 96822
         {' '}
         <br />
-        <a href="https://syntax-souljahs.github.io/">
+        <a href="https://syntax-souljahs.github.io/" className="text-light">
           Template Home
           Page
         </a>
