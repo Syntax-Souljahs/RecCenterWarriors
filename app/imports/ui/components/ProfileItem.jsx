@@ -8,6 +8,11 @@ const ProfileItem = ({ profile }) => (
     <Card.Body>
       <Row>
         <Col>
+          <p>Username: {profile.username}</p>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
           <p>First Name: {profile.firstName}</p>
         </Col>
         <Col>
@@ -37,6 +42,7 @@ const ProfileItem = ({ profile }) => (
 // Require a document to be passed to this component.
 ProfileItem.propTypes = {
   profile: PropTypes.shape({
+    username: PropTypes.string,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     year: PropTypes.string,
