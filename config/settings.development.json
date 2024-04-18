@@ -5,8 +5,8 @@
   },
 
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "username": "ADAMLOSEWINS","email": "admin@foo.com", "password": "changeme", "role": "admin" },
+    { "username": "JFoo","email": "john@foo.com", "password": "changeme" }
   ],
 
   "defaultData": [
@@ -16,7 +16,7 @@
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
   "defaultProfiles": [
-    { "firstName": "John", "lastName": "Doe", "year": "Sophomore", "major": "Computer Science","email": "john@foo.com", "interests":  "General Health/Fitness"},
-    { "firstName": "Admin", "lastName": "Losefield", "year": "Sophomore", "major": "Computer Science","email": "admin@foo.com", "interests":  "General Health/Fitness"}
+    { "username": "JFoo" ,"firstName": "John", "lastName": "Doe", "year": "Sophomore", "major": "Computer Science","email": "john@foo.com", "interests":  "General Health/Fitness"},
+    { "username": "ADAMLOSEWINS","firstName": "Admin", "lastName": "Losefield", "year": "Sophomore", "major": "Computer Science","email": "admin@foo.com", "interests":  "General Health/Fitness"}
   ]
 }
