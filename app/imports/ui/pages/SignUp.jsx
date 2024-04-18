@@ -6,6 +6,8 @@ import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import swal from 'sweetalert';
+import { Profiles } from '../../api/profile/Profile';
 
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -15,6 +17,7 @@ const SignUp = ({ location }) => {
   const [redirectToReferer, setRedirectToRef] = useState(false);
 
   const schema = new SimpleSchema({
+    username: String,
     firstName: String,
     lastName: String,
     year: {
@@ -26,23 +29,33 @@ const SignUp = ({ location }) => {
     email: String,
     interests: {
       type: String,
-      allowedValues: ['General Health / Fitness', 'Bodybuilding / Aesthetics', 'Powerlifting', 'Crossfit', 'Other'],
-      defaultValue: 'General Health / Fitness',
+      allowedValues: ['General Health/Fitness', 'Bodybuilding/Aesthetics', 'Powerlifting', 'Crossfit', 'Other'],
+      defaultValue: 'General Health/Fitness',
     },
-    user: String,
     password: String,
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
-  const submit = (doc) => {
-    const { firstName, lastName, year, major, email, interests, user, password } = doc;
-    Accounts.createUser({ firstName, lastName, year, major, email, interests, user, password }, (err) => {
+  const submit = (doc, formRef) => {
+    const { firstName, lastName, year, major, email, interests, username, password } = doc;
+    Accounts.createUser({ username, email, password }, (err) => {
       if (err) {
         setError(err.reason);
       } else {
         setError('');
-        setRedirectToRef(true);
+        Profiles.collection.insert(
+          { username, firstName, lastName, year, major, email, interests },
+          (profileError) => {
+            if (profileError) {
+              swal('Error', profileError.message, 'error');
+            } else {
+              swal('Success', 'Registration Successful', 'success');
+              formRef.reset();
+              setRedirectToRef(true);
+            }
+          },
+        );
       }
     });
   };
@@ -53,6 +66,7 @@ const SignUp = ({ location }) => {
   if (redirectToReferer) {
     return <Navigate to={from} />;
   }
+  let fRef = null;
   return (
     <Container id="signup-page" className="py-3">
       <Row className="justify-content-center">
@@ -60,11 +74,11 @@ const SignUp = ({ location }) => {
           <Col className="text-center">
             <h2 style={{ fontFamily: 'Quicksand, sans-serif', color: 'ivory' }}>Register your account</h2>
           </Col>
-          <AutoForm schema={bridge} onSubmit={data => submit(data)}>
+          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="user" placeholder="Username" /></Col>
+                  <Col><TextField name="username" placeholder="Username" /></Col>
                 </Row>
                 <Row>
                   <Col><TextField name="firstName" placeholder="First Name" /></Col>
@@ -79,10 +93,10 @@ const SignUp = ({ location }) => {
                   <Col><TextField name="password" placeholder="Password" type="password" /></Col>
                 </Row>
                 <Row>
-                  <Col><SelectField name="interests" placeholder="Gym / Health Interests / Goals" /></Col>
+                  <Col><SelectField name="interests" placeholder="General Health/Fitness" /></Col>
                 </Row>
                 <ErrorsField />
-                <SubmitField />
+                <SubmitField value="Submit" />
               </Card.Body>
             </Card>
           </AutoForm>
