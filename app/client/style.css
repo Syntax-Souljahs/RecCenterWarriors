@@ -96,3 +96,9 @@ body {
   padding-top: 0;
 }
 
+footer {
+  background-color: black;
+  color: var(--bs-dark);
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
