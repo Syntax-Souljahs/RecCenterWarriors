@@ -4,8 +4,14 @@ import { _ } from 'meteor/underscore';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Container, Row } from 'react-bootstrap';
 import { Profiles } from '../../api/profile/Profile';
-import { Card } from '/components/Card';
+import MakeCard from '../components/ProfileCard';
 import LoadingSpinner from '../components/LoadingSpinner';
+
+function getProfileData(email) {
+  const data = Profiles.collection.findOne({ email });
+  // console.log(data);
+  return _.extend({}, data);
+}
 
 const BuddyUp = () => {
   const { ready } = useTracker(() => {
@@ -15,10 +21,14 @@ const BuddyUp = () => {
       ready: sub1.ready(),
     };
   }, []);
+  const emails = _.pluck(Profiles.collection.find().fetch(), 'email');
+  console.log(emails);
+  const profileData = emails.map(email => getProfileData(email));
+  // console.log(profileData);
   return ready ? (
     <Container>
       <Row xs={1} md={2} lg={4} className="g-2">
-        {_.sample(Profiles.map((profile, index) => <Card key={index} profile={profile} />))}
+        {_.sample(profileData.map((profile, index) => <MakeCard key={index} profile={profile} />))}
       </Row>
     </Container>
   ) : <LoadingSpinner />;
