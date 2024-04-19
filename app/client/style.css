@@ -94,3 +94,6 @@ body {
   padding-top: 0;
 }
 
+#footer-page {
+  background-color: rgba(0, 0, 0, 0.5);
+}
