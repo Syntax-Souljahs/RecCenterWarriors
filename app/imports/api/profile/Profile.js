@@ -24,6 +24,7 @@ class ProfilesCollection {
         allowedValues: ['General Health/Fitness', 'Bodybuilding/Aesthetics', 'Powerlifting', 'Crossfit', 'Other'],
         defaultValue: 'General Health/Fitness',
       },
+      favoriteExercises: [String], // Array of exercise IDs
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -31,10 +32,20 @@ class ProfilesCollection {
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
+
+  // Method to add an exercise to favorites of a user
+  addToFavorites(exerciseId, userId) {
+    this.collection.update({ _id: userId }, { $addToSet: { favoriteExercises: exerciseId } });
+  }
+
+  // Method to remove an exercise from favorites of a user
+  removeFromFavorites(exerciseId, userId) {
+    this.collection.update({ _id: userId }, { $pull: { favoriteExercises: exerciseId } });
+  }
 }
 
 /**
- * The singleton instance of the StuffsCollection.
+ * The singleton instance of the ProfilesCollection.
  * @type {ProfilesCollection}
  */
 export const Profiles = new ProfilesCollection();

@@ -13,7 +13,7 @@ class ExercisesCollection {
       description: String,
       category: {
         type: String,
-        allowedValues: ['Cardio', 'Strength', 'Flexibility', 'Balance'],
+        allowedValues: ['Cardio', 'Strength', 'Flexibility', 'Hypertrophy'],
       },
       difficulty: {
         type: String,
