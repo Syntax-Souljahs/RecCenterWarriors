@@ -21,7 +21,7 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
   }
   return this.ready();
 });
-/*
+
 Meteor.publish(Profiles.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
@@ -29,8 +29,6 @@ Meteor.publish(Profiles.userPublicationName, function () {
   }
   return this.ready();
 });
-*/
-Meteor.publish(Profiles.userPublicationName, () => Profiles.collection.find());
 
 Meteor.publish(Profiles.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
