@@ -17,11 +17,9 @@ const createUser = (username, email, password, role) => {
   }
 };
 
+// Allow users to update their username
+
 // functionality to edit the username and nothing else of a user
-const editUser = (userID, newUsername) => {
-  console.log(`  Editing user ${userID}.`);
-  Meteor.users.update(userID, { $set: { username: newUsername } });
-};
 
 // When running app for first time, pass a settings file to set up a default user account.
 if (Meteor.users.find().count() === 0) {
