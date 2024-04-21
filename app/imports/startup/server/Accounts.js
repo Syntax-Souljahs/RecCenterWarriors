@@ -6,6 +6,13 @@ import { Roles } from 'meteor/alanning:roles';
 
 const createUser = (username, email, password, role) => {
   console.log(`  Creating user ${email}.`);
+
+  // Check if there's already a user with the same username (case-sensitive)
+  const existingUser = Meteor.users.findOne({ username: { $regex: `^${username}$`, $options: 'i' } });
+  if (existingUser) {
+    throw new Error('Username is already taken.');
+  }
+
   const userID = Accounts.createUser({
     username: username,
     email: email,
