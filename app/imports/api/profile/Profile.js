@@ -24,7 +24,10 @@ class ProfilesCollection {
         allowedValues: ['General Health/Fitness', 'Bodybuilding/Aesthetics', 'Powerlifting', 'Crossfit', 'Other'],
         defaultValue: 'General Health/Fitness',
       },
-      favoriteExercises: [String], // Array of exercise IDs
+      favoriteExercises: {
+        type: String,
+        optional: true,
+      },
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
