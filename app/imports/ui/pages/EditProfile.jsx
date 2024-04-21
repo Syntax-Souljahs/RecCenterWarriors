@@ -57,7 +57,7 @@ const EditProfile = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col>f</Col>
+                  <Col><TextField name="username" placeholder="Username" disabled="true" /></Col>
                 </Row>
                 <Row>
                   <Col><TextField name="firstName" placeholder="First Name" /></Col>
@@ -68,8 +68,8 @@ const EditProfile = () => {
                   <Col><TextField name="major" placeholder="Major" /></Col>
                 </Row>
                 <Row>
-                  <Col>f</Col>
-                  <Col>f</Col>
+                  <Col><TextField name="email" placeholder="email" disabled="true" /></Col>
+                  <Col />
                 </Row>
                 <Row>
                   <Col><SelectField name="interests" placeholder="General Health/Fitness" /></Col>
