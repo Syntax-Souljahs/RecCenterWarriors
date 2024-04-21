@@ -23,6 +23,7 @@ import ViewProfile from '../pages/ViewProfile';
 import WorkoutSchedule from '../pages/WorkoutSchedule';
 import Exercises from '../pages/Exercises';
 import BuddyUp from '../pages/BuddyUp';
+import EditProfile from '../pages/EditProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/exercises" element={<ProtectedRoute><Exercises /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><Findbuddy /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
+          <Route path="/editprofile/:_id" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
           <Route path="/viewprofile" element={<ProtectedRoute><ViewProfile /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><AdminPage /></AdminProtectedRoute>} />
           <Route path="/workout-sched" element={<ProtectedRoute><WorkoutSchedule /></ProtectedRoute>} />
