@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const ProfileItem = ({ profile }) => (
@@ -35,6 +36,7 @@ const ProfileItem = ({ profile }) => (
           <p>Interests: {profile.interests}</p>
         </Col>
       </Row>
+      <Link to={`/editprofile/${profile._id}`}>Edit</Link>
     </Card.Body>
   </Card>
 );
