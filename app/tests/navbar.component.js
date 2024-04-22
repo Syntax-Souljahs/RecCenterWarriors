@@ -62,6 +62,17 @@ class NavBar {
     await testController.click('#navbar-current-user');
     await testController.click('#navbar-view-profile');
   }
+  // Navigate to edit profile page
+
+  async gotoEditProfilePage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#navbar-current-user');
+    await testController.click('#navbar-view-profile');
+    await testController.click('#edit-profile-button');
+  }
 }
 
 export const navBar = new NavBar();

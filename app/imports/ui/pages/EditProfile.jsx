@@ -47,7 +47,7 @@ const EditProfile = () => {
   };
 
   return ready ? (
-    <Container id="signup-page" className="py-3">
+    <Container id="edit-profile-page" className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center">
@@ -60,22 +60,22 @@ const EditProfile = () => {
                   <Col><TextField name="username" placeholder="Username" disabled="true" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="firstName" placeholder="First Name" /></Col>
-                  <Col><TextField name="lastName" placeholder="Last Name" /></Col>
+                  <Col><TextField id="edit-form-firstName" name="firstName" placeholder="First Name" /></Col>
+                  <Col><TextField id="edit-form-lastName" name="lastName" placeholder="Last Name" /></Col>
                 </Row>
                 <Row>
-                  <Col><SelectField name="year" placeholder="year" /></Col>
-                  <Col><TextField name="major" placeholder="Major" /></Col>
+                  <Col><SelectField id="edit-form-year" name="year" placeholder="year" /></Col>
+                  <Col><TextField id="edit-form-major" name="major" placeholder="Major" /></Col>
                 </Row>
                 <Row>
                   <Col><TextField name="email" placeholder="email" disabled="true" /></Col>
                   <Col />
                 </Row>
                 <Row>
-                  <Col><SelectField name="interests" placeholder="General Health/Fitness" /></Col>
+                  <Col><SelectField id="edit-form-interests" name="interests" placeholder="General Health/Fitness" /></Col>
                 </Row>
                 <ErrorsField />
-                <SubmitField value="Submit" />
+                <SubmitField id="edit-form-submit" value="Submit" />
               </Card.Body>
             </Card>
           </AutoForm>
