@@ -36,7 +36,7 @@ const ProfileItem = ({ profile }) => (
           <p>Interests: {profile.interests}</p>
         </Col>
       </Row>
-      <Link to={`/editprofile/${profile._id}`}>Edit</Link>
+      <Link id="edit-profile-button" to={`/editprofile/${profile._id}`}>Edit</Link>
     </Card.Body>
   </Card>
 );
