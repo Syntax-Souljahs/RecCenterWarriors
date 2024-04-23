@@ -1,10 +1,10 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-class ProfilesCollection {
+class BuddyProfilesCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ProfilesCollection';
+    this.name = 'BuddyProfilesCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
@@ -39,20 +39,10 @@ class ProfilesCollection {
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
-
-  // Method to add an exercise to favorites of a user
-  addToFavorites(exerciseId, userId) {
-    this.collection.update({ _id: userId }, { $addToSet: { favoriteExercises: exerciseId } });
-  }
-
-  // Method to remove an exercise from favorites of a user
-  removeFromFavorites(exerciseId, userId) {
-    this.collection.update({ _id: userId }, { $pull: { favoriteExercises: exerciseId } });
-  }
 }
 
 /**
  * The singleton instance of the ProfilesCollection.
- * @type {ProfilesCollection}
+ * @type {BuddyProfilesCollection}
  */
-export const Profiles = new ProfilesCollection();
+export const BuddyProfiles = new BuddyProfilesCollection();

@@ -8,6 +8,7 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Profiles } from '../../api/profile/Profile';
+import { BuddyProfiles } from '../../api/profile/BuddyProfiles';
 
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -50,7 +51,19 @@ const SignUp = ({ location }) => {
             if (profileError) {
               swal('Error', profileError.message, 'error');
             } else {
-              swal('Success', 'Registration Successful', 'success');
+              // swal('Success', 'Registration Successful', 'success');
+              formRef.reset();
+              setRedirectToRef(true);
+            }
+          },
+        );
+        BuddyProfiles.collection.insert(
+          { username, firstName, lastName, year, major, email, interests },
+          (profileError) => {
+            if (profileError) {
+              swal('Error', profileError.message, 'error');
+            } else {
+              // swal('Success', 'Registration Successful', 'success');
               formRef.reset();
               setRedirectToRef(true);
             }
@@ -78,25 +91,25 @@ const SignUp = ({ location }) => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="username" placeholder="Username" /></Col>
+                  <Col><TextField id="signup-form-username" name="username" placeholder="Username" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="firstName" placeholder="First Name" /></Col>
-                  <Col><TextField name="lastName" placeholder="Last Name" /></Col>
+                  <Col><TextField id="signup-form-firstName" name="firstName" placeholder="First Name" /></Col>
+                  <Col><TextField id="signup-form-lastName" name="lastName" placeholder="Last Name" /></Col>
                 </Row>
                 <Row>
-                  <Col><SelectField name="year" placeholder="year" /></Col>
-                  <Col><TextField name="major" placeholder="Major" /></Col>
+                  <Col><SelectField id="signup-form-year" name="year" placeholder="year" /></Col>
+                  <Col><TextField id="signup-form-major" name="major" placeholder="Major" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="email" placeholder="E-mail Address " /></Col>
-                  <Col><TextField name="password" placeholder="Password" type="password" /></Col>
+                  <Col><TextField id="signup-form-email" name="email" placeholder="E-mail Address " /></Col>
+                  <Col><TextField id="signup-form-password" name="password" placeholder="Password" type="password" /></Col>
                 </Row>
                 <Row>
-                  <Col><SelectField name="interests" placeholder="General Health/Fitness" /></Col>
+                  <Col><SelectField id="signup-form-interests" name="interests" placeholder="General Health/Fitness" /></Col>
                 </Row>
                 <ErrorsField />
-                <SubmitField value="Submit" />
+                <SubmitField id="signup-form-submit" value="Submit" />
               </Card.Body>
             </Card>
           </AutoForm>
