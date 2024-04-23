@@ -73,6 +73,41 @@ class NavBar {
     await testController.click('#navbar-view-profile');
     await testController.click('#edit-profile-button');
   }
+
+  // Navigate to exercises page
+  async gotoExercisesPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#exercises-nav');
+  }
+
+  // Navigate to guide page
+  async gotoGuidePage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#guide-nav');
+  }
+
+  async gotoBuddyUpPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#buddy-up-nav');
+  }
+
+  async gotoWorkoutSchedulePage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#workout-schedule-nav');
+  }
+
 }
 
 export const navBar = new NavBar();
