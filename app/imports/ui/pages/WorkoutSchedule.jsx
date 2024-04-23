@@ -2,54 +2,19 @@ import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, SelectField, SubmitField } from 'uniforms-bootstrap5';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import SimpleSchema from 'simpl-schema';
-import { workoutschedule } from '../../api/profile/Workout Schedule';
+import { UserWorkoutSchedule } from '../../api/profile/Workout Schedule';
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
  */
 const WorkoutSchedule = () => {
-  const schema = new workoutschedule.schema
-  /*  mondayWorkout: {
-      type: String,
-      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
-    },
-    tuesdayWorkout: {
-      type: String,
-      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
-    },
-    wednesdayWorkout: {
-      type: String,
-      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
-    },
-    thursdayWorkout: {
-      type: String,
-      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
-    },
-    fridayWorkout: {
-      type: String,
-      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
-    },
-    saturdayWorkout: {
-      type: String,
-      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
-    },
-    sundayWorkout: {
-      type: String,
-      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
-    },
-    year: {
-      type: String,
-      allowedValues: ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Faculty'],
-      defaultValue: 'Freshman',
-    },
-  }); */
+  const schema = UserWorkoutSchedule.schema;
   const bridge = new SimpleSchema2Bridge(schema);
 
   const submit = (data) => {
-    const { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, year } = data;
-    workoutschedule.insert(
-      { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, year },
-    );
+    console.log(data);
+    const { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout } = data;
+    console.log(mondayWorkout);
+    UserWorkoutSchedule.insert({ mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout });
   };
 
   /* Display the signup form. Redirect to add page after successful registration and login. */

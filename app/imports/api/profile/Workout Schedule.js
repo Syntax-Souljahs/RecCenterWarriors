@@ -4,7 +4,7 @@ import SimpleSchema from 'simpl-schema';
 class UserWorkoutSchedules {
   constructor() {
     // The name of this collection.
-    this.name = 'UserWorkoutSchedules';
+    this.name = 'UserWorkoutSchedule';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
@@ -53,6 +53,6 @@ class UserWorkoutSchedules {
 
 /**
  * The singleton instance of the StuffsCollection.
- * @type {ProfilesCollection}
+ * @type {UserWorkoutSchedules}
  */
-export const workoutschedule = new UserWorkoutSchedules();
+export const UserWorkoutSchedule = new UserWorkoutSchedules();
