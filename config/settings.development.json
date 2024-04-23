@@ -8,13 +8,6 @@
     { "username": "ADAMLOSEWINS","email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "username": "JFoo","email": "john@foo.com", "password": "changeme" }
   ],
-
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
-  ],
   "defaultProfiles": [
     { "username": "JFoo" ,"firstName": "John", "lastName": "Doe", "year": "Sophomore", "major": "Computer Science","email": "john@foo.com", "interests":  "General Health/Fitness"},
     { "username": "ADAMLOSEWINS","firstName": "Admin", "lastName": "Losefield", "year": "Sophomore", "major": "Computer Science","email": "admin@foo.com", "interests":  "General Health/Fitness"}
