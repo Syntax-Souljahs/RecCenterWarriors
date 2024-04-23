@@ -12,9 +12,9 @@ const WorkoutSchedule = () => {
 
   const submit = (data) => {
     console.log(data);
-    const { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout } = data;
+    const { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, year } = data;
     console.log(mondayWorkout);
-    UserWorkoutSchedule.insert({ mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout });
+    UserWorkoutSchedule.collection.insert({ mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, year });
   };
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
