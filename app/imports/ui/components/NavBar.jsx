@@ -30,7 +30,7 @@ const NavBar = () => {
               ]
             ) : (
               [
-                <Nav.Link id="list-stuff-nav" as={NavLink} to="/exercises">Exercises</Nav.Link>,
+                <Nav.Link id="list-stuff-nav" as={NavLink} to="/exercises" key="exercises">Exercises</Nav.Link>,
                 <Nav.Link id="guide-nav" as={NavLink} to="/guide" key="guide">Guide</Nav.Link>,
               ]
             )}
