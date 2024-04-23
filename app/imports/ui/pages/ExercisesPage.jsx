@@ -41,7 +41,7 @@ const ExercisesPage = () => {
     },
   ];
   return (ready ? (
-    <Container>
+    <Container id="exercises-page">
       <Row xs={1} md={2} lg={4} className="g-2">
         {testEx.map((exercise) => <ExerciseCard key={exercise._id} exercise={exercise} />)}
       </Row>
