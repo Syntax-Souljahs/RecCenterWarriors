@@ -23,7 +23,9 @@ const ProfilesAdmin = ({ profile, collection }) => {
       <td>
         <Link to={`/edit/${profile.firstName}`}>Edit</Link>
       </td>
-      <td><Button variant="danger" onClick={() => deleteProfile(profile.firstName)}><Trash /></Button></td>
+      <td>
+        <Button variant="danger" onClick={() => deleteProfile(profile.firstName)}>Delete<Trash /></Button>
+      </td>
     </tr>
   );
 };
