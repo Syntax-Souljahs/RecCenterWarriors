@@ -24,12 +24,13 @@ const NavBar = () => {
           <Nav className="me-auto justify-content-start">
             {currentUser ? (
               [
-                <Nav.Link id="add-stuff-nav" as={NavLink} to="/add" key="add">Find A Buddy</Nav.Link>,
-                <Nav.Link id="list-stuff-nav" as={NavLink} to="/exercises" key="exercises">Exercises</Nav.Link>,
+                <Nav.Link id="exercises-nav" as={NavLink} to="/exercises" key="exercises">Exercises</Nav.Link>,
+                <Nav.Link id="buddy-up-nav" as={NavLink} to="/buddy-up" key="buddy-up">Buddy Up</Nav.Link>,
+                <Nav.Link id="guide-nav" as={NavLink} to="/guide" key="guide">Guide</Nav.Link>,
               ]
             ) : (
               [
-                <Nav.Link id="list-stuff-nav" as={NavLink} to="/exercises">Exercises</Nav.Link>,
+                <Nav.Link id="list-stuff-nav" as={NavLink} to="/exercises" key="exercises">Exercises</Nav.Link>,
                 <Nav.Link id="guide-nav" as={NavLink} to="/guide" key="guide">Guide</Nav.Link>,
               ]
             )}
@@ -41,7 +42,7 @@ const NavBar = () => {
             {/* New navbar item for logged-in users */}
             {currentUser !== '' && (
               <>
-                <Nav.Link as={NavLink} to="/workout-sched">
+                <Nav.Link id="workout-schedule-nav" as={NavLink} to="/workout-sched">
                   Workout Schedule
                 </Nav.Link>
                 <NavDropdown id="navbar-current-user" title={currentUser}>

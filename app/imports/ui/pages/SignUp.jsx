@@ -8,6 +8,7 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Profiles } from '../../api/profile/Profile';
+import { BuddyProfiles } from '../../api/profile/BuddyProfiles';
 
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -45,6 +46,18 @@ const SignUp = ({ location }) => {
       } else {
         setError('');
         Profiles.collection.insert(
+          { username, firstName, lastName, year, major, email, interests },
+          (profileError) => {
+            if (profileError) {
+              swal('Error', profileError.message, 'error');
+            } else {
+              // swal('Success', 'Registration Successful', 'success');
+              formRef.reset();
+              setRedirectToRef(true);
+            }
+          },
+        );
+        BuddyProfiles.collection.insert(
           { username, firstName, lastName, year, major, email, interests },
           (profileError) => {
             if (profileError) {
