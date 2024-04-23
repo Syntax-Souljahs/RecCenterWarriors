@@ -17,7 +17,7 @@ class StuffsCollection {
       year: String,
       major: String,
       email: String,
-      interests: String
+      interests: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

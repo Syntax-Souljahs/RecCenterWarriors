@@ -19,7 +19,7 @@ const WorkoutSchedule = () => {
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
   return (
-    <Container id="signup-page" className="py-3">
+    <Container id="workout-schedule-page" className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center">
