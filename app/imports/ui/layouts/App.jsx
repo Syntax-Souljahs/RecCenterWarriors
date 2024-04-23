@@ -10,7 +10,6 @@ import ListStuff from '../pages/ListStuff';
 import AdminPage from '../pages/AdminPage';
 import EditStuff from '../pages/EditStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import Findbuddy from '../pages/Findbuddy';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
@@ -47,7 +46,6 @@ const App = () => {
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/exercises" element={<ProtectedRoute><Exercises /></ProtectedRoute>} />
-          <Route path="/add" element={<ProtectedRoute><Findbuddy /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
           <Route path="/editprofile/:_id" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
           <Route path="/viewprofile" element={<ProtectedRoute><ViewProfile /></ProtectedRoute>} />
