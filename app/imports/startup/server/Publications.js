@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Profiles } from '../../api/profile/Profile';
+import { BuddyProfiles } from '../../api/profile/BuddyProfiles';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
@@ -36,6 +37,8 @@ Meteor.publish(Profiles.adminPublicationName, function () {
   }
   return this.ready();
 });
+
+Meteor.publish(BuddyProfiles.userPublicationName, () => BuddyProfiles.collection.find());
 
 // alanning:roles publication
 // Recommended code to publish roles for each user.

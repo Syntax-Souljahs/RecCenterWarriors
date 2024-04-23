@@ -1,4 +1,4 @@
-name: ci-meteor-application-template-react
+name: RecCenterWarriors
 
 on:
   push:
@@ -38,4 +38,5 @@ jobs:
         run: |
           meteor npm install
           meteor npm run lint
-#          meteor npm run testcafe-ci
+          meteor reset
+          meteor npm run testcafe-ci

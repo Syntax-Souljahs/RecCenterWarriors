@@ -22,7 +22,7 @@ const StuffItemAdmin = ({ stuff, collection }) => {
       <td>
         <Link to={`/edit/${stuff.firstName}`}>Edit</Link>
       </td>
-      <td><Button variant="danger" onClick={() => deleteProfile(stuff.firstName)}><Trash /></Button></td>
+      <td><Button variant="danger" onClick={() => deleteProfile(stuff.firstName)}><Trash />Delete</Button></td>
     </tr>
   );
 };
