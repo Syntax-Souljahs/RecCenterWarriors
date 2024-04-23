@@ -24,7 +24,8 @@ const ExerciseCard = ({ exercise }) => (
         </Card.Text>
       </Card.Body>
       <Card.Footer>
-        <Button variant="success">Add To Favorites</Button>
+        <Button className="mx-1" variant="info">Video</Button>
+        <Button className="mx-1" variant="success">Add To Favorites</Button>
       </Card.Footer>
     </Card>
   </Col>
