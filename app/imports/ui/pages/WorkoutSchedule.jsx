@@ -1,23 +1,56 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, SelectField, SubmitField } from 'uniforms-bootstrap5';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import SimpleSchema from 'simpl-schema';
 import { workoutschedule } from '../../api/profile/Workout Schedule';
-
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
  */
 const WorkoutSchedule = () => {
-  const insertWorkoutSchedule = (workoutSchedule) => {
-      const schedule = {
-        monday: formData.mondayWorkout,
-        tuesday: formData.tuesdayWorkout,
-        wednesday: formData.wednesdayWorkout,
-        thursday: formData.thursdayWorkout,
-        friday: formData.fridayWorkout,
-        saturday: formData.saturdayWorkout,
-        sunday: formData.sundayWorkout,
-        year: formData.year,
-      };
+  const schema = new workoutschedule.schema
+  /*  mondayWorkout: {
+      type: String,
+      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
+    },
+    tuesdayWorkout: {
+      type: String,
+      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
+    },
+    wednesdayWorkout: {
+      type: String,
+      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
+    },
+    thursdayWorkout: {
+      type: String,
+      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
+    },
+    fridayWorkout: {
+      type: String,
+      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
+    },
+    saturdayWorkout: {
+      type: String,
+      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
+    },
+    sundayWorkout: {
+      type: String,
+      allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
+    },
+    year: {
+      type: String,
+      allowedValues: ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Faculty'],
+      defaultValue: 'Freshman',
+    },
+  }); */
+  const bridge = new SimpleSchema2Bridge(schema);
+
+  const submit = (data) => {
+    const { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, year } = data;
+    workoutschedule.insert(
+      { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, year },
+    );
+  };
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
   return (
@@ -27,7 +60,7 @@ const WorkoutSchedule = () => {
           <Col className="text-center">
             <h2 style={{ fontFamily: 'Quicksand, sans-serif', color: 'ivory' }}>Set Your Workout Schedule</h2>
           </Col>
-          <AutoForm schema={workoutschedule}>
+          <AutoForm schema={bridge} onSubmit={(data) => submit(data)}>
             <Card>
               <Card.Body>
                 <Row>
@@ -79,7 +112,7 @@ const WorkoutSchedule = () => {
                   </Col>
                 </Row>
                 <ErrorsField />
-                <SubmitField />
+                <SubmitField value="Submit" />
               </Card.Body>
             </Card>
           </AutoForm>
