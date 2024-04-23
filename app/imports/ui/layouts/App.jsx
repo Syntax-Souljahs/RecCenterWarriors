@@ -22,6 +22,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ViewProfile from '../pages/ViewProfile';
 import WorkoutSchedule from '../pages/WorkoutSchedule';
 import ExercisesPage from '../pages/ExercisesPage';
+import BuddyUp from '../pages/BuddyUp';
 import EditProfile from '../pages/EditProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/guide" element={<Guide />} />
+          <Route path="/buddy-up" element={<BuddyUp />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/exercises" element={<ProtectedRoute><ExercisesPage /></ProtectedRoute>} />
