@@ -5,6 +5,8 @@ import { navBar } from './navbar.component';
 import { signupPage } from './signup.page';
 import { viewprofilePage } from './viewprofile.page';
 import { editprofilePage } from './editprofile.page';
+import { guidePage } from './guide.page';
+import { findABuddyPage } from './findbuddy.page';
 
 /* global fixture:false, test:false */
 
@@ -55,4 +57,19 @@ test('Test that the editprofile page works', async (testController) => {
   await editprofilePage.editUser(testController, editCredentials.firstName, editCredentials.lastName, editCredentials.year, editCredentials.major, editCredentials.interests);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
+});
+test.only('Test that the navbar components go to all pages', async (testController) => {
+  // await navBar.gotoSignInPage(testController);
+  await navBar.gotoExercisesPage(testController);
+  await signinPage.isDisplayed(testController);
+  await navBar.gotoGuidePage(testController);
+  await guidePage.isDisplayed(testController);
+  await navBar.gotoSignInPage(testController);
+  await signinPage.isDisplayed(testController);
+  await navBar.gotoSignUpPage(testController);
+  await signupPage.isDisplayed(testController);
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoFindBuddyPage(testController);
+  await findABuddyPage.isDisplayed(testController);
 });

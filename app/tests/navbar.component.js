@@ -62,6 +62,24 @@ class NavBar {
     await testController.click('#navbar-current-user');
     await testController.click('#navbar-view-profile');
   }
+
+  async gotoGuidePage(testController) {
+    await this.ensureLogout(testController);
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#guide-nav');
+  }
+
+  async gotoExercisesPage(testController) {
+    await this.ensureLogout(testController);
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#exercises-nav');
+  }
   // Navigate to edit profile page
 
   async gotoEditProfilePage(testController) {
@@ -72,6 +90,14 @@ class NavBar {
     await testController.click('#navbar-current-user');
     await testController.click('#navbar-view-profile');
     await testController.click('#edit-profile-button');
+  }
+
+  async gotoFindBuddyPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click('#find-buddy-nav');
   }
 }
 
