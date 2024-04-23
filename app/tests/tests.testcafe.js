@@ -5,6 +5,10 @@ import { navBar } from './navbar.component';
 import { signupPage } from './signup.page';
 import { viewprofilePage } from './viewprofile.page';
 import { editprofilePage } from './editprofile.page';
+import { exercisesPage } from './exercises.page';
+import { guidePage } from './guide.page';
+import { buddyupPage } from './buddyup.page';
+import { workoutschedulePage } from './workoutschedule.page';
 
 /* global fixture:false, test:false */
 
@@ -55,4 +59,42 @@ test('Test that the editprofile page works', async (testController) => {
   await editprofilePage.editUser(testController, editCredentials.firstName, editCredentials.lastName, editCredentials.year, editCredentials.major, editCredentials.interests);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
+});
+
+// Test that exercises page displays correctly
+test('Test that the exercises page works', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoExercisesPage(testController);
+  await exercisesPage.isDisplayed(testController);
+});
+
+// Test that the guide page displays correctly
+test('Test that the guide page works', async (testController) => {
+  await navBar.gotoGuidePage(testController);
+  await guidePage.isDisplayed(testController);
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoGuidePage(testController);
+  await guidePage.isDisplayed(testController);
+});
+
+// Test that the buddyup page displays correctly
+test('Test that the buddyup page works', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoBuddyUpPage(testController);
+  await buddyupPage.isDisplayed(testController);
+});
+
+// Test that the workout schedule page displays correctly
+test('Test that the workout schedule page works', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoWorkoutSchedulePage(testController);
+  await workoutschedulePage.isDisplayed(testController);
 });

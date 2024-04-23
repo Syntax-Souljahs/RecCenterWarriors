@@ -29,7 +29,7 @@ const BuddyUp = () => {
   const profileData = usernames.map(username => getProfileData(username));
   // console.log(profileData);
   return ready ? (
-    <Container>
+    <Container id="buddy-up-page">
       <Row xs={1} md={2} lg={4} className="g-2">
         {_.sample(profileData.map((profile, index) => <MakeCard key={index} profile={profile} />))}
       </Row>
