@@ -27,6 +27,7 @@ const NavBar = () => {
                 <Nav.Link id="add-stuff-nav" as={NavLink} to="/add" key="add">Find A Buddy</Nav.Link>,
                 <Nav.Link id="list-stuff-nav" as={NavLink} to="/exercises" key="exercises">Exercises</Nav.Link>,
                 <Nav.Link id="buddy-up-nav" as={NavLink} to="/buddy-up" key="buddy-up">Buddy Up</Nav.Link>,
+                <Nav.Link id="guide-nav" as={NavLink} to="/guide" key="guide">Guide</Nav.Link>,
               ]
             ) : (
               [
