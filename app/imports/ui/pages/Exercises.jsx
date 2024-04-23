@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
+import { Container } from 'react-bootstrap';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Card from '../components/Card';
 import { Stuffs } from '../../api/stuff/Stuff';
@@ -23,8 +24,9 @@ const Exercises = () => {
     };
   }, []);
   return (ready ? (
-    <Card>Some Exercise K</Card>
-
+    <Container id="exercises-page">
+      <Card>Some Exercise K</Card>
+    </Container>
   ) : <LoadingSpinner />);
 };
 
