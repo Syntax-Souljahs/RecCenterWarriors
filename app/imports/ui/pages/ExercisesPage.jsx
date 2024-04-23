@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Container, Row } from 'react-bootstrap';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { Stuffs } from '../../api/stuff/Stuff';
+import { Profiles } from '../../api/profile/Profile';
 import ExerciseCard from '../components/ExerciseCard';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -13,11 +13,11 @@ const ExercisesPage = () => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.
-    const subscription = Meteor.subscribe(Stuffs.userPublicationName);
+    const subscription = Meteor.subscribe(Profiles.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Stuff documents
-    const stuffItems = Stuffs.collection.find({}).fetch();
+    const stuffItems = Profiles.collection.find({}).fetch();
     return {
       stuffs: stuffItems,
       ready: rdy,
