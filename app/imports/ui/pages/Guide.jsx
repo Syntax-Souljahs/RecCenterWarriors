@@ -45,7 +45,7 @@ const Guide = () => (
           <Nav.Item>
             This is where you can view or edit your information.
           </Nav.Item>
-          <Image src="/images/profile-image.jpeg" fluid />
+          <Image src="/images/My-profile.png" fluid />
         </Nav>
       </Col>
       <Col xs={2} />
