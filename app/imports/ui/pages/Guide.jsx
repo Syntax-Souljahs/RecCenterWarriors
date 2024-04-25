@@ -27,7 +27,7 @@ const Guide = () => (
           <Nav.Item as="h1" id="find-a-buddy">Find A Buddy</Nav.Item>
           <Nav.Item>
             This is where you see the profiles of other Rec Center Warrior members. <br />
-            <Image src="/images/find-a-buddy-image.jpeg" fluid />
+            <Image src="/images/Buddy-up.png" fluid />
             Here you can look for someone to workout with. <br />
             Just send them a buddy up request!
           </Nav.Item>
