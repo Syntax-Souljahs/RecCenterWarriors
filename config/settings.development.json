@@ -15,8 +15,8 @@
   ],
 
   "defaultExercises": [
-    { "name" : "Bench Press", "description": "Press a barbell while laying on a bench", "category": "Strength", "difficulty": "Intermediate"},
-    { "name" : "Squat", "description": "Squat and stand up with a barbell on your back", "category": "Strength", "difficulty": "Intermediate"},
-    { "name" : "Deadlift", "description": "Stand up while holding a barbell", "category": "Strength", "difficulty": "Intermediate"}
+    { "name" : "Bench Press", "description": "Press a barbell while laying on a bench", "category": "Strength", "difficulty": "Intermediate", "image_url":"", "video_url": ""},
+    { "name" : "Squat", "description": "Squat and stand up with a barbell on your back", "category": "Strength", "difficulty": "Intermediate","image_url":"", "video_url": ""},
+    { "name" : "Deadlift", "description": "Stand up while holding a barbell", "category": "Strength", "difficulty": "Intermediate","image_url":"", "video_url": ""}
   ]
 }
