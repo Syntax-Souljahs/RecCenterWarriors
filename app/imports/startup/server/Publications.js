@@ -5,13 +5,10 @@ import { BuddyProfiles } from '../../api/profile/BuddyProfiles';
 import { Exercises } from '../../api/exercises/Exercises';
 import { Favorites } from '../../api/favorites/Favorites';
 
-<<<<<<< HEAD
-=======
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
->>>>>>> main
 Meteor.publish(Profiles.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
