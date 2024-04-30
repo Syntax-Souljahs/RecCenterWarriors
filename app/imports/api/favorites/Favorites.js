@@ -4,7 +4,7 @@ import SimpleSchema from 'simpl-schema';
 class FavoritesCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ExercisesCollection';
+    this.name = 'FavoritesCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
