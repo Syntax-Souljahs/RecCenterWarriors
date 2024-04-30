@@ -1,10 +1,8 @@
 import React from 'react';
 import { Col, Card, Button, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { Meteor } from 'meteor/meteor';
-import AddFavorite from './AddFavorite';
 
-const ExerciseCard = ({ exercise }) => (
+const FavoriteCard = ({ exercise }) => (
   <Col className="py-3">
     <Card>
       <Card.Header>
@@ -30,23 +28,19 @@ const ExerciseCard = ({ exercise }) => (
           <Col>
             <Button className="mx-1" variant="info">Video</Button>
           </Col>
-          <Col>
-            <AddFavorite name={exercise.name} category={exercise.category} description={exercise.description} difficulty={exercise.difficulty} owner={Meteor.user().username} />
-          </Col>
         </Row>
       </Card.Footer>
     </Card>
   </Col>
 );
 
-ExerciseCard.propTypes = {
+FavoriteCard.propTypes = {
   exercise: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
     category: PropTypes.string,
     difficulty: PropTypes.string,
-    _id: PropTypes.string,
   }).isRequired,
 };
 
-export default ExerciseCard;
+export default FavoriteCard;

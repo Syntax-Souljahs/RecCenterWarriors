@@ -6,10 +6,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListStuff from '../pages/ListStuff';
 import AdminPage from '../pages/AdminPage';
-import EditStuff from '../pages/EditStuff';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
@@ -23,6 +20,7 @@ import WorkoutSchedule from '../pages/WorkoutSchedule';
 import ExercisesPage from '../pages/ExercisesPage';
 import BuddyUp from '../pages/BuddyUp';
 import EditProfile from '../pages/EditProfile';
+import FavoritesPage from '../pages/FavoritesPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -44,14 +42,12 @@ const App = () => {
           <Route path="/guide" element={<Guide />} />
           <Route path="/buddy-up" element={<BuddyUp />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-          <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/exercises" element={<ProtectedRoute><ExercisesPage /></ProtectedRoute>} />
-          <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
           <Route path="/editprofile/:_id" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
           <Route path="/viewprofile" element={<ProtectedRoute><ViewProfile /></ProtectedRoute>} />
+          <Route path="/viewfavoriteexercises" element={<ProtectedRoute><FavoritesPage /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><AdminPage /></AdminProtectedRoute>} />
           <Route path="/workout-sched" element={<ProtectedRoute><WorkoutSchedule /></ProtectedRoute>} />
-          <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

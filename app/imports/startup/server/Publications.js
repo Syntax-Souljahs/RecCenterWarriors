@@ -1,13 +1,29 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
-import { Stuffs } from '../../api/stuff/Stuff';
 import { Profiles } from '../../api/profile/Profile';
 import { BuddyProfiles } from '../../api/profile/BuddyProfiles';
+import { Exercises } from '../../api/exercises/Exercises';
+import { Favorites } from '../../api/favorites/Favorites';
 
+<<<<<<< HEAD
+=======
+// User-level publication.
+// If logged in, then publish documents owned by this user. Otherwise, publish nothing.
+// Admin-level publication.
+// If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
+>>>>>>> main
 Meteor.publish(Profiles.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Profiles.collection.find({ username: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Favorites.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Favorites.collection.find({ owner: username });
   }
   return this.ready();
 });
@@ -20,6 +36,8 @@ Meteor.publish(Profiles.adminPublicationName, function () {
 });
 
 Meteor.publish(BuddyProfiles.userPublicationName, () => BuddyProfiles.collection.find());
+
+Meteor.publish(Exercises.userPublicationName, () => Exercises.collection.find());
 
 // alanning:roles publication
 // Recommended code to publish roles for each user.
