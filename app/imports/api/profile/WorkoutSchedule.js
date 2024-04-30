@@ -1,7 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-class UserWorkoutSchedules {
+class WorkoutSchedules {
   constructor() {
     // The name of this collection.
     this.name = 'UserWorkoutSchedule';
@@ -37,11 +37,7 @@ class UserWorkoutSchedules {
         type: String,
         allowedValues: ['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull'],
       },
-      year: {
-        type: String,
-        allowedValues: ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate', 'Faculty'],
-        defaultValue: 'Freshman',
-      },
+      owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -55,4 +51,4 @@ class UserWorkoutSchedules {
  * The singleton instance of the StuffsCollection.
  * @type {UserWorkoutSchedules}
  */
-export const UserWorkoutSchedule = new UserWorkoutSchedules();
+export const WorkoutSchedule = new WorkoutSchedules();

@@ -1,20 +1,21 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SelectField, SubmitField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, HiddenField, SelectField, SubmitField } from 'uniforms-bootstrap5';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { UserWorkoutSchedule } from '../../api/profile/Workout Schedule';
+import { WorkoutSchedule } from '../../api/profile/WorkoutSchedule';
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
  */
-const WorkoutSchedule = () => {
-  const schema = UserWorkoutSchedule.schema;
+const WorkoutSchedulePage = () => {
+  const schema = WorkoutSchedule.schema;
   const bridge = new SimpleSchema2Bridge(schema);
 
   const submit = (data) => {
     console.log(data);
-    const { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, year } = data;
+    const { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, owner } = data;
     console.log(mondayWorkout);
-    UserWorkoutSchedule.collection.insert({ mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, year });
+    WorkoutSchedule.collection.insert({ mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, owner });
   };
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
@@ -77,6 +78,7 @@ const WorkoutSchedule = () => {
                   </Col>
                 </Row>
                 <ErrorsField />
+                <HiddenField name="owner" value={Meteor.userId()} />
                 <SubmitField value="Submit" />
               </Card.Body>
             </Card>
@@ -88,4 +90,4 @@ const WorkoutSchedule = () => {
 };
 
 /* Ensure that the React Router location object is available in case we need to redirect. */
-export default WorkoutSchedule;
+export default WorkoutSchedulePage;
