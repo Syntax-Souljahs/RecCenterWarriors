@@ -4,7 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
-import { BoxArrowRight, PersonFill, PersonPlusFill, PersonSquare } from 'react-bootstrap-icons';
+import { BoxArrowRight, PersonFill, PersonPlusFill, PersonSquare, StarFill } from 'react-bootstrap-icons';
 
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
@@ -49,6 +49,10 @@ const NavBar = () => {
                   <NavDropdown.Item id="navbar-view-profile" as={NavLink} to="/viewprofile">
                     <PersonSquare />
                     View Profile
+                  </NavDropdown.Item>
+                  <NavDropdown.Item id="navbar-view-favorite-exercies" as={NavLink} to="/viewfavoriteexercises">
+                    <StarFill />
+                    Favorite Exercises
                   </NavDropdown.Item>
                   <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
                     <BoxArrowRight />
