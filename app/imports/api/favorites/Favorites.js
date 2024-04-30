@@ -9,11 +9,22 @@ class FavoritesCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      exerciseId: String,
+      name: String,
+      description: String,
+      category: {
+        type: String,
+        allowedValues: ['Cardio', 'Strength', 'Flexibility', 'Hypertrophy'],
+      },
+      difficulty: {
+        type: String,
+        allowedValues: ['Beginner', 'Intermediate', 'Advanced'],
+      },
       owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
+    this.userPublicationName = `${this.name}.publication.user`;
+    this.adminPublicationName = `${this.name}.publication.admin`;
   }
 
   // Method to add a new exercise to the collection
