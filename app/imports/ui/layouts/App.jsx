@@ -16,7 +16,7 @@ import Guide from '../pages/Guide';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ViewProfile from '../pages/ViewProfile';
-import WorkoutSchedule from '../pages/WorkoutSchedule';
+import WorkoutSchedulePage from '../pages/WorkoutSchedulePage';
 import ExercisesPage from '../pages/ExercisesPage';
 import BuddyUp from '../pages/BuddyUp';
 import EditProfile from '../pages/EditProfile';
@@ -47,7 +47,7 @@ const App = () => {
           <Route path="/viewprofile" element={<ProtectedRoute><ViewProfile /></ProtectedRoute>} />
           <Route path="/viewfavoriteexercises" element={<ProtectedRoute><FavoritesPage /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><AdminPage /></AdminProtectedRoute>} />
-          <Route path="/workout-sched" element={<ProtectedRoute><WorkoutSchedule /></ProtectedRoute>} />
+          <Route path="/workout-sched" element={<ProtectedRoute><WorkoutSchedulePage /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
