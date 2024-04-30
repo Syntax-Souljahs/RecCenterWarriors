@@ -29,7 +29,7 @@ Meteor.publish(Favorites.userPublicationName, function () {
 Meteor.publish(WorkoutSchedule.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
-    return Favorites.collection.find({ owner: username });
+    return WorkoutSchedule.collection.find({ owner: username });
   }
   return this.ready();
 });
