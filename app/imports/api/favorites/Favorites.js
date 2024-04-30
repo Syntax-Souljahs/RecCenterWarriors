@@ -1,10 +1,10 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-class ExercisesCollection {
+class FavoritesCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ExercisesCollection';
+    this.name = 'FavoritesCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
@@ -19,21 +19,21 @@ class ExercisesCollection {
         type: String,
         allowedValues: ['Beginner', 'Intermediate', 'Advanced'],
       },
+      owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
-    // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
 
   // Method to add a new exercise to the collection
-  addExercise(name, description, category, difficulty) {
-    return this.collection.insert({ name, description, category, difficulty });
+  addFavorite(exerciseId, owner) {
+    return this.collection.insert({ exerciseId, owner });
   }
 
   // Method to remove an exercise from the collection
-  removeExercise(exerciseId) {
+  removeFavorite(exerciseId) {
     this.collection.remove({ _id: exerciseId });
   }
 }
@@ -42,4 +42,4 @@ class ExercisesCollection {
  * The singleton instance of the ExercisesCollection.
  * @type {ExercisesCollection}
  */
-export const Exercises = new ExercisesCollection();
+export const Favorites = new FavoritesCollection();
