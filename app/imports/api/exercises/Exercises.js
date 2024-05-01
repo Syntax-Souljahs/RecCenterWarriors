@@ -13,7 +13,7 @@ class ExercisesCollection {
       description: String,
       category: {
         type: String,
-        allowedValues: ['Cardio', 'Strength', 'Flexibility', 'Hypertrophy'],
+        allowedValues: ['Cardio', 'Biceps', 'Triceps', 'Back', 'Shoulder', 'Calves', 'Quads', 'Glutes', 'Core', 'Chest'],
       },
       difficulty: {
         type: String,
@@ -25,7 +25,7 @@ class ExercisesCollection {
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
-    this.userPublicationName = `${this.name}.publication.user`;
+    this.PublicationName = `${this.name}.publication.user`;
   }
 
   // Method to add a new exercise to the collection
