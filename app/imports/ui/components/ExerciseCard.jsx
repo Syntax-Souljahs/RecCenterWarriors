@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Card, Button, Row, Image } from 'react-bootstrap';
+import { Col, Card, Button, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import AddFavorite from './AddFavorite';
@@ -32,7 +32,7 @@ const ExerciseCard = ({ exercise }) => (
             <Button className="mx-1" variant="info" href={exercise.video_url}>Video</Button>
           </Col>
           <Col>
-            <AddFavorite name={exercise.name} category={exercise.category} description={exercise.description} difficulty={exercise.difficulty} owner={Meteor.user().username} />
+            <AddFavorite name={exercise.name} category={exercise.category} description={exercise.description} difficulty={exercise.difficulty} owner={Meteor.user().username} image_url={exercise.image_url} video_url={exercise.video_url} />
           </Col>
         </Row>
       </Card.Footer>

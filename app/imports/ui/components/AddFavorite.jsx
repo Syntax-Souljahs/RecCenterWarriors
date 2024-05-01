@@ -18,14 +18,16 @@ const formSchema = new SimpleSchema({
     allowedValues: ['Beginner', 'Intermediate', 'Advanced'],
   },
   owner: String,
+  image_url: String,
+  video_url: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-const AddFavorite = ({ name, description, category, difficulty, owner }) => {
+const AddFavorite = ({ name, description, category, difficulty, owner, image_url, video_url }) => {
   const submit = (data, formRef) => {
     Favorites.collection.insert(
-      { name, description, category, difficulty, owner },
+      { name, description, category, difficulty, owner, image_url, video_url },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -45,6 +47,8 @@ const AddFavorite = ({ name, description, category, difficulty, owner }) => {
       <HiddenField name="description" value={description} />
       <HiddenField name="category" value={category} />
       <HiddenField name="difficulty" value={difficulty} />
+      <HiddenField name="image_url" value={image_url} />
+      <HiddenField name="video_url" value={video_url} />
       <ErrorsField />
     </AutoForm>
   );
@@ -56,6 +60,8 @@ AddFavorite.propTypes = {
   category: PropTypes.string.isRequired,
   difficulty: PropTypes.string.isRequired,
   owner: PropTypes.string.isRequired,
+  image_url: PropTypes.string.isRequired,
+  video_url: PropTypes.string.isRequired,
 };
 
 export default AddFavorite;
