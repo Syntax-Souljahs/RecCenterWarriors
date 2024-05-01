@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Card, Button, Row } from 'react-bootstrap';
+import { Col, Card, Button, Row, Image } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import AddFavorite from './AddFavorite';
@@ -11,7 +11,7 @@ const ExerciseCard = ({ exercise }) => (
         {exercise.name}
       </Card.Header>
       <Card.Body>
-        <image src={exercise.image_url} />
+        <Card.Img src={exercise.image_url} />
         <Card.Text>
           <strong>Description</strong>
           <br />
