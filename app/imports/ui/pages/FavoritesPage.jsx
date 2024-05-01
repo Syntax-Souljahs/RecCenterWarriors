@@ -28,22 +28,7 @@ const FavoritesPage = () => {
     };
   }, []);
   /* Test data until we have a populated exercise collection */
-  const testEx = [
-    {
-      name: 'Push Ups',
-      description: 'Push Ups',
-      category: 'Strength',
-      difficulty: 'Beginner',
-      _id: '123',
-    },
-    {
-      name: 'Treadmill',
-      description: 'Treadmill',
-      category: 'Cardio',
-      difficulty: 'Intermediate',
-      _id: '124',
-    },
-  ];
+
   return (ready ? (
     <Container id="favorites-page">
       <Row xs={1} md={2} lg={4} className="g-2">

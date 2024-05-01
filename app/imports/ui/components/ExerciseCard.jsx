@@ -11,6 +11,7 @@ const ExerciseCard = ({ exercise }) => (
         {exercise.name}
       </Card.Header>
       <Card.Body>
+        <image src={exercise.image_url} />
         <Card.Text>
           <strong>Description</strong>
           <br />
@@ -28,7 +29,7 @@ const ExerciseCard = ({ exercise }) => (
       <Card.Footer>
         <Row>
           <Col>
-            <Button className="mx-1" variant="info">Video</Button>
+            <Button className="mx-1" variant="info" href={exercise.video_url}>Video</Button>
           </Col>
           <Col>
             <AddFavorite name={exercise.name} category={exercise.category} description={exercise.description} difficulty={exercise.difficulty} owner={Meteor.user().username} />
@@ -45,6 +46,8 @@ ExerciseCard.propTypes = {
     description: PropTypes.string,
     category: PropTypes.string,
     difficulty: PropTypes.string,
+    image_url: PropTypes.string,
+    video_url: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
 };

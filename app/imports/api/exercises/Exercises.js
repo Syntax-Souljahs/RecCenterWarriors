@@ -19,17 +19,18 @@ class ExercisesCollection {
         type: String,
         allowedValues: ['Beginner', 'Intermediate', 'Advanced'],
       },
+      image_url: String,
+      video_url: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
-    this.userPublicationName = `${this.name}.publication.user`;
-    this.adminPublicationName = `${this.name}.publication.admin`;
+    this.PublicationName = `${this.name}.publication.user`;
   }
 
   // Method to add a new exercise to the collection
-  addExercise(name, description, category, difficulty) {
-    return this.collection.insert({ name, description, category, difficulty });
+  addExercise(name, description, category, difficulty, image_url, video_url) {
+    return this.collection.insert({ name, description, category, difficulty, image_url, video_url });
   }
 
   // Method to remove an exercise from the collection
