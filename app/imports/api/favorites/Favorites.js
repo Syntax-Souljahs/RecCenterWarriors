@@ -19,9 +19,9 @@ class FavoritesCollection {
         type: String,
         allowedValues: ['Beginner', 'Intermediate', 'Advanced'],
       },
+      owner: String,
       image_url: String,
       video_url: String,
-      owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

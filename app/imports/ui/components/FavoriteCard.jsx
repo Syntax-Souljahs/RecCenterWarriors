@@ -9,6 +9,7 @@ const FavoriteCard = ({ exercise }) => (
         {exercise.name}
       </Card.Header>
       <Card.Body>
+        <Card.Img src={exercise.image_url} />
         <Card.Text>
           <strong>Description</strong>
           <br />
@@ -26,7 +27,7 @@ const FavoriteCard = ({ exercise }) => (
       <Card.Footer>
         <Row>
           <Col>
-            <Button className="mx-1" variant="info">Video</Button>
+            <Button className="mx-1" variant="info" href={exercise.video_url}>Video</Button>
           </Col>
         </Row>
       </Card.Footer>
@@ -40,6 +41,8 @@ FavoriteCard.propTypes = {
     description: PropTypes.string,
     category: PropTypes.string,
     difficulty: PropTypes.string,
+    image_url: PropTypes.string,
+    video_url: PropTypes.string,
   }).isRequired,
 };
 
