@@ -44,10 +44,16 @@ const Landing = () => {
           <section className="container">
             <div className="slider-wrapper">
               <div className="slider">
-                <img id="slide-1" src="/images/exercises.jpeg" alt="exercises pic" />
-                <img id="slide-2" src="/images/buddy-up.jpeg" alt="Buddy Up pic" />
-                <img id="slide-3" src="/images/guide.jpeg" alt="Guide pic" />
-                <img id="slide-4" src="/images/workout-schedule.jpeg" alt="Workout Schedule pic" />
+                <img id="slide-1" src="/images/exercises.jpeg" alt="exercises pic"/>
+                <img id="slide-2" src="/images/buddy-up.jpeg" alt="Buddy Up pic"/>
+                <img id="slide-3" src="/images/guide.jpeg" alt="Guide pic"/>
+                <img id="slide-4" src="/images/workout-schedule.jpeg" alt="Workout Schedule pic"/>
+                <div className="slider-button">
+                  <button>Exercises</button>
+                  <button>Buddy Up</button>
+                  <button>Guide</button>
+                  <button>Workout Schedule</button>
+                </div>
               </div>
               <div className="slider-nav">
                 <a href="#slide-1"></a>
