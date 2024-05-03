@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, HiddenField, SelectField, SubmitField } from 'uniforms-bootstrap5';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import swal from 'sweetalert';
 import { WorkoutSchedule } from '../../api/profile/WorkoutSchedule';
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -15,9 +16,16 @@ const WorkoutSchedulePage = () => {
     console.log(data);
     const { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, owner } = data;
     console.log(mondayWorkout);
-    WorkoutSchedule.collection.insert({ mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, owner });
+    WorkoutSchedule.collection.insert(
+      { mondayWorkout, tuesdayWorkout, wednesdayWorkout, thursdayWorkout, fridayWorkout, saturdayWorkout, sundayWorkout, owner },
+      (profileError) => {
+        if (profileError) {
+          swal('Error', profileError.message, 'error');
+        }
+      },
+    );
   };
-
+  let fRef = null;
   /* Display the signup form. Redirect to add page after successful registration and login. */
   return (
     <Container id="workout-schedule-page" className="py-3">
@@ -26,7 +34,7 @@ const WorkoutSchedulePage = () => {
           <Col className="text-center">
             <h2 style={{ fontFamily: 'Quicksand, sans-serif', color: 'ivory' }}>Set Your Workout Schedule</h2>
           </Col>
-          <AutoForm schema={bridge} onSubmit={(data) => submit(data)}>
+          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={(data) => submit(data, fRef)}>
             <Card>
               <Card.Body>
                 <Row>
