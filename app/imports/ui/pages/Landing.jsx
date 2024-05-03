@@ -93,7 +93,8 @@ const Landing = () => {
           </Row>
           <Col xs={6} className="mt-4">
             <Row className="align-middle text-center"><h2 style={{ color: '#ffff' }}>Find a Workout Partner</h2>
-              <div style={{ color: 'lightgray' }}> Whether you&apos;re looking to build muscle, improve endurance, or simply maintain your fitness routine, our Exercises page has something for everyone.</div>
+              {/* eslint-disable-next-line max-len */}
+              <div style={{ color: 'lightgray' }}> Looking to stay motivated and push your limits? Check out our Workout Partner Finder! Discover someone who shares your fitness goals. Together, you&apos;ll achieve more and have fun along the way.</div>
               {/* eslint-disable-next-line react/button-has-type */}
               <div className="landing-buttons mt-4">
                 <a href="/buddy-up">
