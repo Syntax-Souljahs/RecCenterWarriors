@@ -5,6 +5,7 @@
 :root {
   --matr-navbar-bg: #ECECEC;
   --matr-navbar-bg-rgb: 236, 236, 236;
+  --matr-signin-bg: #0e500e;
 }
 
 /* Change bootstrap variable values.
@@ -17,7 +18,19 @@ body {
 
 #signin-page {
   h2 {
-    color: #0e500e;
+    color: var(--matr-signin-bg);
+    font-size: 50px;
+    text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+  }
+}
+
+#signup-page {
+  h2 {
+    color: var(--matr-signin-bg);
     font-size: 50px;
     text-shadow:
         -1px -1px 0 white,
