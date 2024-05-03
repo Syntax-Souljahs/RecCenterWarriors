@@ -37,13 +37,40 @@ const Landing = () => {
         </Row>
       ) : (
         <Row className="align-middle text-center">
-          <Col xs={2} />
+          <Col xs={2}/>
           <Col xs={8}>
             <h1>Welcome back {currentUser}</h1>
           </Col>
+
+          <section className="container">
+            <div className="slider-wrapper">
+              <div className="slider">
+                <img id="slide-1" src="/images/exercises.jpeg" alt="exercises pic"/>
+                <img id="slide-2" src="/images/buddy-up.jpeg" alt="Buddy Up pic"/>
+                <img id="slide-3" src="/images/guide.jpeg" alt="Guide pic"/>
+                <img id="slide-4" src="/images/workout-schedule.jpeg" alt="Workout Schedule pic"/>
+                <div className="slider-nav">
+                  <a href="#slide-1"></a>
+                  <a href="#slide-2"></a>
+                  <a href="#slide-3"></a>
+                  <a href="#slide-4"></a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <row className="justify-content-center">
+            <div style={{ color: '#ffff' }}><h2>Plan your Workouts</h2>
+              <p>Join our vibrant gym community and be part of something bigger.</p>
+              <p>Our workout schedule not only helps you stay organized but also provides opportunities to connect with fellow members,</p> share fitness tips, and motivate each other on your fitness journey.</div>
+            <div className="landing-buttons">
+              <a href = "/workout-sched">
+                <button>Workout Schedule</button>
+              </a>
+            </div>
+          </row>
           <Row className="align-items-center mt-4">
             <Col xs={7}>
-              <img src="/images/exercises.jpeg" alt="Exercises" className="img-fluid" />
+              <img src="/images/exercises.jpeg" alt="Exercises" className="img-fluid"/>
             </Col>
             <Col xs={5}>
               <div style={{ color: '#ffff' }}>
@@ -71,24 +98,8 @@ const Landing = () => {
             </Row>
           </Col>
           <Col xs={6} className="mt-4">
-            <img src="/images/buddy-up.jpeg" alt="Exercises" className="img-fluid" />
+            <img src="/images/buddy-up.jpeg" alt="Exercises" className="img-fluid"/>
           </Col>
-          <section className="container">
-            <div className="slider-wrapper">
-              <div className="slider">
-                <img id="slide-1" src="/images/exercises.jpeg" alt="exercises pic"/>
-                <img id="slide-2" src="/images/buddy-up.jpeg" alt="Buddy Up pic"/>
-                <img id="slide-3" src="/images/guide.jpeg" alt="Guide pic"/>
-                <img id="slide-4" src="/images/workout-schedule.jpeg" alt="Workout Schedule pic"/>
-                <div className="slider-nav">
-                  <a href="#slide-1"></a>
-                  <a href="#slide-2"></a>
-                  <a href="#slide-3"></a>
-                  <a href="#slide-4"></a>
-                </div>
-              </div>
-            </div>
-          </section>
         </Row>
       )}
     </Container>
