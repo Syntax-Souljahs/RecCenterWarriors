@@ -21,6 +21,7 @@ import ExercisesPage from '../pages/ExercisesPage';
 import BuddyUp from '../pages/BuddyUp';
 import EditProfile from '../pages/EditProfile';
 import FavoritesPage from '../pages/FavoritesPage';
+import RequestsPage from '../pages/RequestsPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/buddy-up" element={<BuddyUp />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/exercises" element={<ProtectedRoute><ExercisesPage /></ProtectedRoute>} />
+          <Route path="/requests" element={<ProtectedRoute><RequestsPage /></ProtectedRoute>} />
           <Route path="/editprofile/:_id" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
           <Route path="/viewprofile" element={<ProtectedRoute><ViewProfile /></ProtectedRoute>} />
           <Route path="/viewfavoriteexercises" element={<ProtectedRoute><FavoritesPage /></ProtectedRoute>} />
