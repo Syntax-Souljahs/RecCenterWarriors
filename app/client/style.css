@@ -125,11 +125,15 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.slider img{
-  flex: 1 0 100%;
-  scroll-snap-align: start;
-  object-fit: cover;
+.slider img,
+.slider a img {
+  flex: 1 0 100% !important;
+  scroll-snap-align: start !important;
+  object-fit: cover !important;
 }
+
+
+
 
 .slider-nav{
   display: flex;
@@ -152,4 +156,26 @@ body {
 
 .slider-nav a:hover {
   opacity: 1;
+}
+
+.landing-buttons {
+  text-align: center;
+}
+
+.landing-buttons button {
+  background-color: darkolivegreen; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 30px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Display as inline block */
+  font-size: 16px; /* Font size */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.landing-buttons button:hover {
+  background-color: darkslategray; /* Darker green on hover */
 }
