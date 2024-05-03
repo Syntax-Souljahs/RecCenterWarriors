@@ -63,9 +63,9 @@ const Landing = () => {
             </div>
           </section>
           <row className="justify-content-center">
-            <div style={{ color: '#ffff', paddingTop: '50px' }}><h2>Join the community!</h2>
-              <p>Join our vibrant gym community and be part of something bigger.</p>
-              <p>Our workout schedule not only helps you stay organized but also provides opportunities to connect with fellow members,</p> share fitness tips, and motivate each other on your fitness journey.
+            <div style={{ color: '#ffff', paddingTop: '50px' }}><h2>Join the community!</h2></div>
+            <div style={{ color: 'lightgray' }}><p>Join our vibrant gym community and be part of something bigger. Our workout schedule not only helps you stay organized</p>
+              <p> but also provides opportunities to connect with fellow members, share fitness tips, and motivate each other on your fitness journey.</p>
             </div>
             <div className="landing-buttons" style={{ paddingTop: '25px' }}>
               <a href="/workout-sched">
