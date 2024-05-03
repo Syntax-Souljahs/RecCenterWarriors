@@ -43,9 +43,9 @@ Meteor.publish(Profiles.adminPublicationName, function () {
 
 Meteor.publish(BuddyProfiles.userPublicationName, () => BuddyProfiles.collection.find());
 
-Meteor.publish(Exercises.userPublicationName, () => Exercises.collection.find());
+Meteor.publish(Exercises.PublicationName, () => Exercises.collection.find());
 
-// alanning:roles publication
+// planning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {
   if (this.userId) {
