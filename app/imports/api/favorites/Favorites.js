@@ -13,13 +13,15 @@ class FavoritesCollection {
       description: String,
       category: {
         type: String,
-        allowedValues: ['Cardio', 'Strength', 'Flexibility', 'Hypertrophy'],
+        allowedValues: ['Cardio', 'Biceps', 'Triceps', 'Back', 'Shoulder', 'Calves', 'Quads', 'Glutes', 'Core', 'Chest'],
       },
       difficulty: {
         type: String,
         allowedValues: ['Beginner', 'Intermediate', 'Advanced'],
       },
       owner: String,
+      image_url: String,
+      video_url: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

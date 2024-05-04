@@ -7,9 +7,9 @@ import { Trash } from 'react-bootstrap-icons';
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
 // eslint-disable-next-line react/prop-types
 const ProfilesAdmin = ({ profile, collection }) => {
-  const deleteProfile = (profileName) => {
-    console.log(`${profileName} profile was deleted`); // later add as parameter reason for deletion, and later add ban button
-    collection.remove(profileName);
+  const deleteProfile = (profiles) => {
+    console.log(`${profiles.firstName} profile was deleted`); // later add as parameter reason for deletion, and later add ban button
+    collection.remove(profiles._id);
   };
 
   return (
@@ -24,7 +24,7 @@ const ProfilesAdmin = ({ profile, collection }) => {
         <Link to={`/edit/${profile.firstName}`}>Edit</Link>
       </td>
       <td>
-        <Button variant="danger" onClick={() => deleteProfile(profile.firstName)}>Delete<Trash /></Button>
+        <Button variant="danger" onClick={() => deleteProfile(profile)}>Delete<Trash /></Button>
       </td>
     </tr>
   );
@@ -39,6 +39,7 @@ ProfilesAdmin.propTypes = {
     major: PropTypes.string,
     email: PropTypes.string,
     interests: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
   // eslint-disable-next-line react/forbid-prop-types,react/no-unused-prop-types
   collection: PropTypes.object.isRequired,

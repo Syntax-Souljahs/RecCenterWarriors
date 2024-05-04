@@ -1,6 +1,8 @@
 import React from 'react';
-import { Col, Card, Button } from 'react-bootstrap';
+import { Meteor } from 'meteor/meteor';
+import { Col, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import AddRequest from './AddRequest';
 
 /* Component for layout out a Profile Card. */
 const MakeCard = ({ profile }) => (
@@ -19,7 +21,7 @@ const MakeCard = ({ profile }) => (
         </Card.Text>
       </Card.Body>
       <Card.Footer>
-        <Button>Buddy Up</Button>
+        <AddRequest owner={Meteor.user().username} buddy={profile.username} />
       </Card.Footer>
     </Card>
   </Col>
@@ -27,6 +29,7 @@ const MakeCard = ({ profile }) => (
 
 MakeCard.propTypes = {
   profile: PropTypes.shape({
+    username: PropTypes.string,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     interests: PropTypes.string,

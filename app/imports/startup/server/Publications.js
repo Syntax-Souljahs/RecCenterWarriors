@@ -4,6 +4,8 @@ import { Profiles } from '../../api/profile/Profile';
 import { BuddyProfiles } from '../../api/profile/BuddyProfiles';
 import { Exercises } from '../../api/exercises/Exercises';
 import { Favorites } from '../../api/favorites/Favorites';
+import { Requests } from '../../api/requests/Requests';
+import { WorkoutSchedule } from '../../api/profile/WorkoutSchedule';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
@@ -25,6 +27,22 @@ Meteor.publish(Favorites.userPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Requests.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Requests.collection.find({ buddy: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(WorkoutSchedule.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return WorkoutSchedule.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
 Meteor.publish(Profiles.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Profiles.collection.find();
@@ -34,9 +52,9 @@ Meteor.publish(Profiles.adminPublicationName, function () {
 
 Meteor.publish(BuddyProfiles.userPublicationName, () => BuddyProfiles.collection.find());
 
-Meteor.publish(Exercises.userPublicationName, () => Exercises.collection.find());
+Meteor.publish(Exercises.PublicationName, () => Exercises.collection.find());
 
-// alanning:roles publication
+// planning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {
   if (this.userId) {

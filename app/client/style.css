@@ -32,6 +32,10 @@ body {
   --bs-alert-bg: var(--matr-navbar-bg);
 }
 
+#favorites-page {
+  color: white;
+}
+
 #guide-page {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -96,4 +100,86 @@ body {
 
 #footer-page {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+
+}
+
+.slider-wrapper{
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.slider{
+  display: flex;
+  aspect-ratio: 16 / 9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius:0.5rem;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slider img,
+.slider a img {
+  flex: 1 0 100% !important;
+  scroll-snap-align: start !important;
+  object-fit: cover !important;
+}
+
+
+
+
+.slider-nav{
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.slider-nav a{
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+}
+
+.landing-buttons {
+  text-align: center;
+}
+
+.landing-buttons button {
+  background-color: darkolivegreen; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 30px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Display as inline block */
+  font-size: 16px; /* Font size */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.landing-buttons button:hover {
+  background-color: darkslategray; /* Darker green on hover */
 }

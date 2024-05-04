@@ -16,11 +16,12 @@ import Guide from '../pages/Guide';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ViewProfile from '../pages/ViewProfile';
-import WorkoutSchedule from '../pages/WorkoutSchedule';
+import WorkoutSchedulePage from '../pages/WorkoutSchedulePage';
 import ExercisesPage from '../pages/ExercisesPage';
 import BuddyUp from '../pages/BuddyUp';
 import EditProfile from '../pages/EditProfile';
 import FavoritesPage from '../pages/FavoritesPage';
+import RequestsPage from '../pages/RequestsPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -43,11 +44,12 @@ const App = () => {
           <Route path="/buddy-up" element={<BuddyUp />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/exercises" element={<ProtectedRoute><ExercisesPage /></ProtectedRoute>} />
+          <Route path="/requests" element={<ProtectedRoute><RequestsPage /></ProtectedRoute>} />
           <Route path="/editprofile/:_id" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
           <Route path="/viewprofile" element={<ProtectedRoute><ViewProfile /></ProtectedRoute>} />
           <Route path="/viewfavoriteexercises" element={<ProtectedRoute><FavoritesPage /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><AdminPage /></AdminProtectedRoute>} />
-          <Route path="/workout-sched" element={<ProtectedRoute><WorkoutSchedule /></ProtectedRoute>} />
+          <Route path="/workout-sched" element={<ProtectedRoute><WorkoutSchedulePage /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

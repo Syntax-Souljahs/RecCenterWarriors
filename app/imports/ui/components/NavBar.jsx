@@ -3,16 +3,24 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
-import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
-import { BoxArrowRight, PersonFill, PersonPlusFill, PersonSquare, StarFill } from 'react-bootstrap-icons';
+import { Container, Nav, Navbar, NavDropdown, Image, Badge } from 'react-bootstrap';
+import { BoxArrowRight, PeopleFill, PersonFill, PersonPlusFill, PersonSquare, StarFill } from 'react-bootstrap-icons';
+import { Requests } from '../../api/requests/Requests';
+import LoadingSpinner from './LoadingSpinner';
 
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { currentUser } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
   }), []);
-
-  return (
+  const { ready } = useTracker(() => {
+    // Ensure that minimongo is populated with all collections prior to running render().
+    const sub1 = Meteor.subscribe(Requests.userPublicationName);
+    return {
+      ready: sub1.ready(),
+    };
+  }, []);
+  return ready ? (
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand as={NavLink} to="/" className="d-flex align-items-center">
@@ -54,6 +62,11 @@ const NavBar = () => {
                     <StarFill />
                     Favorite Exercises
                   </NavDropdown.Item>
+                  <NavDropdown.Item id="navbar-view-requests" as={NavLink} to="/requests">
+                    <PeopleFill />
+                    Requests
+                    <Badge bg="info">{Requests.collection.find().count()}</Badge>
+                  </NavDropdown.Item>
                   <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
                     <BoxArrowRight />
                     Sign out
@@ -81,7 +94,7 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
+  ) : <LoadingSpinner />;
 };
 
 export default NavBar;
