@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Card, Button, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import RemoveFavorite from './RemoveFavorite';
 
 const FavoriteCard = ({ exercise }) => (
   <Col className="py-3">
@@ -28,6 +29,9 @@ const FavoriteCard = ({ exercise }) => (
         <Row>
           <Col>
             <Button className="mx-1" variant="info" href={exercise.video_url}>Video</Button>
+          </Col>
+          <Col>
+            <RemoveFavorite name={exercise.name} />
           </Col>
         </Row>
       </Card.Footer>

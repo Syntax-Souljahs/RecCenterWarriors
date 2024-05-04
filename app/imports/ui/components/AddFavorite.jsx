@@ -11,7 +11,7 @@ const formSchema = new SimpleSchema({
   description: String,
   category: {
     type: String,
-    allowedValues: ['Cardio', 'Strength', 'Flexibility', 'Hypertrophy'],
+    allowedValues: ['Cardio', 'Biceps', 'Triceps', 'Back', 'Shoulder', 'Calves', 'Quads', 'Glutes', 'Core', 'Chest'],
   },
   difficulty: {
     type: String,
