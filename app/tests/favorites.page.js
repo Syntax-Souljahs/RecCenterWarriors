@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 
-class ExercisesPage {
+class FavoritesPage {
   constructor() {
-    this.pageId = '#exercises-page';
+    this.pageId = '#favorites-page';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -11,11 +11,11 @@ class ExercisesPage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  async addFavorite(testController) {
+  async removeFavorite(testController) {
     await this.isDisplayed(testController);
-    await testController.click('#exercises-add-favorite');
+    await testController.click('#remove-favorite');
     await testController.click('.swal-button');
   }
 }
 
-export const exercisesPage = new ExercisesPage();
+export const favoritesPage = new FavoritesPage();

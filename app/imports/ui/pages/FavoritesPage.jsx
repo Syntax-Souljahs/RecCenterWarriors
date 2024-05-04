@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Favorites } from '../../api/favorites/Favorites';
 import { Exercises } from '../../api/exercises/Exercises';
@@ -31,6 +31,11 @@ const FavoritesPage = () => {
 
   return (ready ? (
     <Container id="favorites-page">
+      <Row className="justify-content-center text-center">
+        <Col xs={6}>
+          <h1>Your Favorite Exercises</h1>
+        </Col>
+      </Row>
       <Row xs={1} md={2} lg={4} className="g-2">
         {favorites.map((exercise) => <FavoriteCard key={favorites.exerciseId} exercise={exercise} />)}
       </Row>
