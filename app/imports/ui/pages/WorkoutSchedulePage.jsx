@@ -22,6 +22,9 @@ const WorkoutSchedulePage = () => {
         if (profileError) {
           swal('Error', profileError.message, 'error');
         }
+        else {
+          swal('Success', 'Workout Schedule added successfully', 'success');
+        }
       },
     );
   };
