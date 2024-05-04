@@ -41,7 +41,7 @@ const AddFavorite = ({ name, description, category, difficulty, owner, image_url
   let fRef = null;
   return (
     <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
-      <SubmitField value="Add to favorites" />
+      <SubmitField id="exercises-add-favorite" value="Add to favorites" />
       <HiddenField name="owner" value={owner} />
       <HiddenField name="name" value={name} />
       <HiddenField name="description" value={description} />

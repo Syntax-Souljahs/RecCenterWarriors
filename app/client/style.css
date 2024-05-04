@@ -32,6 +32,10 @@ body {
   --bs-alert-bg: var(--matr-navbar-bg);
 }
 
+#favorites-page {
+  color: white;
+}
+
 #guide-page {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;

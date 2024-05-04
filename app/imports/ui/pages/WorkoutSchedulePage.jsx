@@ -41,55 +41,42 @@ const WorkoutSchedulePage = () => {
               <Card.Body>
                 <Row>
                   <Col>
-                    <SelectField label="Monday" name="mondayWorkout" placeholder="Workout">
-                      options={['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull']}
-                    </SelectField>
+                    <SelectField id="workout-mondayWorkout" label="Monday" name="mondayWorkout" placeholder="Workout" />
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <SelectField label="Tuesday" name="tuesdayWorkout" placeholder="Workout">
-                      options={['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull']}
-                    </SelectField>
+                    <SelectField id="workout-tuesdayWorkout" label="Tuesday" name="tuesdayWorkout" placeholder="Workout" />
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <SelectField label="Wednesday" name="wednesdayWorkout" placeholder="Workout">                    options={['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull']}
-                    </SelectField>
+                    <SelectField id="workout-wednesdayWorkout" label="Wednesday" name="wednesdayWorkout" placeholder="Workout" />
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <SelectField label="Thursday" name="thursdayWorkout" placeholder="Workout">
-                      options={['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull']}
-                    </SelectField>
+                    <SelectField id="workout-thursdayWorkout" label="Thursday" name="thursdayWorkout" placeholder="Workout" />
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <SelectField label="Friday" name="fridayWorkout" placeholder="Workout">
-                      options={['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull']}
-                    </SelectField>
+                    <SelectField id="workout-fridayWorkout" label="Friday" name="fridayWorkout" placeholder="Workout" />
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <SelectField label="Saturday" name="saturdayWorkout" placeholder="Workout">
-                      options={['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull']}
-                    </SelectField>
+                    <SelectField id="workout-saturdayWorkout" label="Saturday" name="saturdayWorkout" placeholder="Workout" />
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <SelectField label="Sunday" name="sundayWorkout" placeholder="Workout">
-                      options={['Cardio', 'Full Body', 'Upper Body', 'Lower Body', 'Core', 'Push', 'Pull']}
-                    </SelectField>
+                    <SelectField id="workout-sundayWorkout" label="Sunday" name="sundayWorkout" placeholder="Workout" />
                   </Col>
                 </Row>
                 <ErrorsField />
                 <HiddenField name="owner" value={Meteor.userId()} />
-                <SubmitField value="Submit" />
+                <SubmitField id="workout-submit" value="Submit" />
               </Card.Body>
             </Card>
           </AutoForm>

@@ -29,7 +29,7 @@ const RemoveFavorite = ({ name }) => {
   let fRef = null;
   return (
     <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
-      <SubmitField value="Remove" />
+      <SubmitField id="remove-favorite" value="Remove" />
       <HiddenField name="name" value={name} />
       <ErrorsField />
     </AutoForm>
