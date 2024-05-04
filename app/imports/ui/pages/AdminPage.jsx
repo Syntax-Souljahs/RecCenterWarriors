@@ -35,6 +35,8 @@ const AdminPage = () => {
                 <th>Major</th>
                 <th>Email</th>
                 <th>Interests</th>
+                <th>Edit Profile</th>
+                <th>Delete Profile</th>
               </tr>
             </thead>
             <tbody>
