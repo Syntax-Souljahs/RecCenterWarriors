@@ -4,6 +4,7 @@ import { Profiles } from '../../api/profile/Profile';
 import { BuddyProfiles } from '../../api/profile/BuddyProfiles';
 import { Exercises } from '../../api/exercises/Exercises';
 import { Favorites } from '../../api/favorites/Favorites';
+import { Requests } from '../../api/requests/Requests';
 import { WorkoutSchedule } from '../../api/profile/WorkoutSchedule';
 
 // User-level publication.
@@ -22,6 +23,14 @@ Meteor.publish(Favorites.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Favorites.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Requests.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Requests.collection.find({ buddy: username });
   }
   return this.ready();
 });
