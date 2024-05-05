@@ -27,7 +27,8 @@ const Guide = () => (
           <Nav.Item as="h1" id="find-a-buddy">Find A Buddy</Nav.Item>
           <Nav.Item>
             This is where you see the profiles of other Rec Center Warrior members. <br />
-            <Image src="/images/find-a-buddy-image.jpeg" fluid />
+            <Link to="/buddy-up">Buddy up now!</Link>
+            <Image src="/images/Buddy-up.png" fluid />
             Here you can look for someone to workout with. <br />
             Just send them a buddy up request!
           </Nav.Item>
@@ -35,17 +36,20 @@ const Guide = () => (
           <Nav.Item>
             In Exercises, you can view all the different exercises available at the Rec Center as well as videos on how to use them.
           </Nav.Item>
+          <Link to="/exercises">View Exercises</Link>
           <Nav.Item as="h1" id="workout-schedule">Workout Schedule</Nav.Item>
           <Nav.Item>
             Manage your sessions using the Workout Schedule.
           </Nav.Item>
+          <Link to="/workout-sched">Set Up Schedule</Link>
           <Nav.Item as="h1" id="view-profile">View Profile</Nav.Item>
           <Nav.Item>You can check your profile here:</Nav.Item>
+          <Link to="/viewprofile">View Profile</Link>
           <Image src="/images/view-profile-link.jpeg" fluid />
           <Nav.Item>
-            This is where you can view or edit your information.
+            From there, you can view or edit your information.
           </Nav.Item>
-          <Image src="/images/profile-image.jpeg" fluid />
+          <Image src="/images/My-profile.png" fluid />
         </Nav>
       </Col>
       <Col xs={2} />
