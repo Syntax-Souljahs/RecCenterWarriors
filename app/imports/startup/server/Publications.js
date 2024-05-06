@@ -6,6 +6,7 @@ import { Exercises } from '../../api/exercises/Exercises';
 import { Favorites } from '../../api/favorites/Favorites';
 import { Requests } from '../../api/requests/Requests';
 import { WorkoutSchedule } from '../../api/profile/WorkoutSchedule';
+import { Buddies } from '../../api/buddies/buddies';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
@@ -31,6 +32,14 @@ Meteor.publish(Requests.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Requests.collection.find({ buddy: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Buddies.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Requests.collection.find({ owner: username });
   }
   return this.ready();
 });
