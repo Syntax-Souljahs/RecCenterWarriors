@@ -1,7 +1,9 @@
 import React from 'react';
-import { Col, Row, Card, Button } from 'react-bootstrap';
+import { Meteor } from 'meteor/meteor';
+import { Col, Row, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-
+import RemoveRequest from './RemoveRequest';
+import AddBuddy from './AddBuddy';
 /* Component for layout out a Profile Card. */
 const RequestCard = ({ profile }) => (
   <Col className="py-3">
@@ -20,8 +22,8 @@ const RequestCard = ({ profile }) => (
       </Card.Body>
       <Card.Footer>
         <Row>
-          <Col><Button variant="success">Accept</Button></Col>
-          <Col><Button variant="danger">Deny</Button></Col>
+          <Col><AddBuddy owner={profile.username} buddy={Meteor.user().username} /></Col>
+          <Col><RemoveRequest owner={profile.username} /></Col>
         </Row>
       </Card.Footer>
     </Card>
