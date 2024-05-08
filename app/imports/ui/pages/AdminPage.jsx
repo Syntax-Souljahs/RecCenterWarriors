@@ -7,24 +7,22 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ProfilesAdmin from '../components/ProfilesAdmin';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItemAdmin> to render each row. */
+
 const AdminPage = () => {
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { profiles, ready } = useTracker(() => {
-    // Get access to Stuff documents.
     const subscription = Meteor.subscribe(Profiles.adminPublicationName);
-    // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the Stuff documents
     const items = Profiles.collection.find({}).fetch();
     return {
       profiles: items,
       ready: rdy,
     };
   }, []);
-  return (ready ? (
+
+  return ready ? (
     <Container id="view-profile-page" className="py-3">
       <Row className="justify-content-center">
-        <Col md={7}>
+        <Col md={9}>
           <Col><h2>Profiles</h2></Col>
           <Table striped bordered hover>
             <thead>
@@ -34,19 +32,22 @@ const AdminPage = () => {
                 <th>Year</th>
                 <th>Major</th>
                 <th>Email</th>
+                <th>Username</th>
                 <th>Interests</th>
                 <th>Edit Profile</th>
                 <th>Delete Profile</th>
               </tr>
             </thead>
             <tbody>
-              {profiles.map((profile) => <ProfilesAdmin key={profile._id} profile={profile} collection={Profiles.collection} />)}
+              {profiles.map((profile) => (
+                <ProfilesAdmin key={profile._id} profile={profile} collection={Profiles.collection} />
+              ))}
             </tbody>
           </Table>
         </Col>
       </Row>
     </Container>
-  ) : <LoadingSpinner />);
+  ) : <LoadingSpinner />;
 };
 
 export default AdminPage;
