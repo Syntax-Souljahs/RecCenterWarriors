@@ -21,7 +21,9 @@ const MakeCard = ({ profile }) => (
         </Card.Text>
       </Card.Body>
       <Card.Footer>
-        <AddRequest owner={Meteor.user().username} buddy={profile.username} />
+        <Col xs={4}>
+          <AddRequest owner={Meteor.user().username} buddy={profile.username} />
+        </Col>
       </Card.Footer>
     </Card>
   </Col>

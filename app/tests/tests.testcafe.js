@@ -26,7 +26,7 @@ fixture('meteor-application-template-react localhost test with default db')
 test('Test that landing page shows up', async (testController) => {
   await landingPage.isDisplayed(testController);
 });
-/*
+
 test('Test that signin and signout work', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
@@ -74,7 +74,7 @@ test('Test that the guide page works', async (testController) => {
   await navBar.gotoGuidePage(testController);
   await guidePage.isDisplayed(testController);
 });
-*/
+
 // Test that the buddyup page displays correctly
 test('Test that the buddyup page works', async (testController) => {
   await navBar.gotoSignInPage(testController);
@@ -84,7 +84,7 @@ test('Test that the buddyup page works', async (testController) => {
   await buddyupPage.isDisplayed(testController);
   await buddyupPage.addBuddy(testController);
 });
-/*
+
 // Test that the workout schedule page displays correctly
 test('Test that the workout schedule displays and the form submits data', async (testController) => {
   await navBar.gotoSignInPage(testController);
@@ -120,8 +120,8 @@ test('Test that the favorites page displays and users can remove favorites', asy
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
 });
-*/
-test('Test accepting buddy reqeust', async (testController) => {
+
+test('Test accepting buddy request', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.isLoggedIn(testController, credentials.username);
