@@ -30,4 +30,17 @@ if (Exercises.collection.find().count() === 0) {
     console.log('Creating default exercises.');
     Meteor.settings.defaultExercises.forEach(exercise => addExercise(exercise));
   }
+
+  const addBuddy = (buddy) => {
+    console.log(`  Adding: ${buddy.lastName} (${buddy.email})`);
+    Profiles.collection.insert(buddy);
+    BuddyProfiles.collection.insert(buddy);
+  };
+
+  if (BuddyProfiles.collection.find().count() === 0) {
+    if (Meteor.settings.defaultBuddies) {
+      console.log('Creating default buddies.');
+      Meteor.settings.defaultBuddies.forEach(buddy => addBuddy(buddy));
+    }
+  }
 }

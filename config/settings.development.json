@@ -56,5 +56,11 @@
     { "name" : "Standing Calf Raise", "description": "Place shoulders under pads and press up against it with calves", "category": "Calves", "difficulty": "Beginner", "image_url":"images/exercises/calfraise.jpg", "video_url": "https://www.youtube.com/watch?v=GAQ-oohMhog&pp=ygUkd2VpZ2h0ZWQgY2FsZiByYWlzZSB0dXRvcmlhbCBtYWNoaW5l"},
     { "name" : "Stationary Bike", "description": "Sit on seat and press feet against pedals", "category": "Cardio", "difficulty": "Beginner", "image_url":"images/exercises/bicycle.jpg", "video_url": "https://www.youtube.com/watch?v=NwwDBARCGgo&pp=ygUaaG93IHRvIHVzZSBiaWN5Y2xlIG1hY2hpbmU%3D"},
     { "name" : "Bar Curl", "description": "Curl bar towards face while standing", "category": "Biceps", "difficulty": "Beginner", "image_url":"images/exercises/barcurl.jpg", "video_url": "https://www.youtube.com/watch?v=kwG2ipFRgfo&pp=ygUQYmFyIGN1cmwgdG90aXJhbA%3D%3D"}
+  ],
+  "defaultBuddies": [
+    {"username": "JFoo", "firstName": "John", "lastName": "Doe", "year": "Sophomore", "major": "Computer Science", "email": "john@foo.com", "interests": "General Health/Fitness"},
+    {"username": "ADAMLOSEWINS", "firstName": "Admin", "lastName": "Losefield", "year": "Sophomore", "major": "Computer Science", "email": "admin@foo.com", "interests": "General Health/Fitness"},
+    {"username": "BSMITH", "firstName": "Brian", "lastName": "Smith", "year": "Sophomore", "major": "Computer Science", "email": "bsmith@foo.com", "interests": "General Health/Fitness"}
   ]
+
 }
