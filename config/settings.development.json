@@ -5,8 +5,55 @@
   },
 
   "defaultAccounts": [
-    { "username": "ADAMLOSEWINS","email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "username": "JFoo","email": "john@foo.com", "password": "changeme" }
+    { "username": "ADAMLOSEWINS", "email": "admin@foo.com", "password": "changeme", "role": "admin" },
+    { "username": "JFoo", "email": "john@foo.com", "password": "changeme" },
+    { "username": "BSMITH", "email": "bsmith@foo.com", "password": "changeme" },
+    { "username": "MLARA", "email": "mlara@foo.com", "password": "changeme" },
+    { "username": "RWILLIAMS", "email": "rwilliams@foo.com", "password": "changeme" },
+    { "username": "KALI", "email": "kali@foo.com", "password": "changeme" },
+    { "username": "JGARCIA", "email": "jgarcia@foo.com", "password": "changeme" },
+    { "username": "LDAVIS", "email": "ldavis@foo.com", "password": "changeme" },
+    { "username": "MRODRIGUEZ", "email": "mrodriguez@foo.com", "password": "changeme" },
+    { "username": "CHERNANDEZ", "email": "chernandez@foo.com", "password": "changeme" },
+    { "username": "LWILSON", "email": "lwilson@foo.com", "password": "changeme" },
+    { "username": "FMOORE", "email": "fmoore@foo.com", "password": "changeme" },
+    { "username": "CKING", "email": "cking@foo.com", "password": "changeme" },
+    { "username": "KMARTIN", "email": "kmartin@foo.com", "password": "changeme" },
+    { "username": "BANDERSON", "email": "banderson@foo.com", "password": "changeme" },
+    { "username": "TJAMES", "email": "tjames@foo.com", "password": "changeme" },
+    { "username": "JSANCHEZ", "email": "jsanchez@foo.com", "password": "changeme" },
+    { "username": "CWILSON", "email": "cwilson@foo.com", "password": "changeme" },
+    { "username": "ACOOPER", "email": "acooper@foo.com", "password": "changeme" },
+    { "username": "PGONZALEZ", "email": "pgonzalez@foo.com", "password": "changeme" },
+    { "username": "JLEE", "email": "jlee@foo.com", "password": "changeme" },
+    { "username": "KLINVILLE", "email": "klinville@foo.com", "password": "changeme" },
+    { "username": "DMARTINEZ", "email": "dmartinez@foo.com", "password": "changeme" },
+    { "username": "BWHITE", "email": "bwhite@foo.com", "password": "changeme" },
+    { "username": "RJOHNSON", "email": "rjohnson@foo.com", "password": "changeme" },
+    { "username": "SALLEN", "email": "sallen@foo.com", "password": "changeme" },
+    { "username": "JGONZALEZ", "email": "jgonzalez@foo.com", "password": "changeme" },
+    { "username": "MMILLER", "email": "mmiller@foo.com", "password": "changeme" },
+    { "username": "WHARRIS", "email": "wharris@foo.com", "password": "changeme" },
+    { "username": "TTHOMPSON", "email": "tthompson@foo.com", "password": "changeme" },
+    { "username": "SJOHNSON", "email": "sjohnson@foo.com", "password": "changeme" },
+    { "username": "CPARKER", "email": "cparker@foo.com", "password": "changeme" },
+    { "username": "RSANDERS", "email": "rsanders@foo.com", "password": "changeme" },
+    { "username": "DCLARK", "email": "dclark@foo.com", "password": "changeme" },
+    { "username": "MMOORE", "email": "mmoore@foo.com", "password": "changeme" },
+    { "username": "NCOLEMAN", "email": "ncoleman@foo.com", "password": "changeme" },
+    { "username": "THALL", "email": "thall@foo.com", "password": "changeme" },
+    { "username": "RWALKER", "email": "rwalker@foo.com", "password": "changeme" },
+    { "username": "WMARTIN", "email": "wmartin@foo.com", "password": "changeme" },
+    { "username": "SMARTIN", "email": "smartin@foo.com", "password": "changeme" },
+    { "username": "BSMITH", "email": "bsmith@foo.com", "password": "changeme" },
+    { "username": "CJONES", "email": "cjones@foo.com", "password": "changeme" },
+    { "username": "SMILLER", "email": "smiller@foo.com", "password": "changeme" },
+    { "username": "SDAVIS", "email": "sdavis@foo.com", "password": "changeme" },
+    { "username": "JGONZALEZ", "email": "jgonzalez@foo.com", "password": "changeme" },
+    { "username": "PJONES", "email": "pjones@foo.com", "password": "changeme" },
+    { "username": "ABROWN", "email": "abrown@foo.com", "password": "changeme" },
+    { "username": "CWILLIAMS", "email": "cwilliams@foo.com", "password": "changeme" },
+    { "username": "CMARTIN", "email": "cmartin@foo.com", "password": "changeme" }
   ],
 
   "defaultProfiles": [
@@ -30,5 +77,9 @@
     { "name" : "Standing Calf Raise", "description": "Place shoulders under pads and press up against it with calves", "category": "Calves", "difficulty": "Beginner", "image_url":"images/exercises/calfraise.jpg", "video_url": "https://www.youtube.com/watch?v=GAQ-oohMhog&pp=ygUkd2VpZ2h0ZWQgY2FsZiByYWlzZSB0dXRvcmlhbCBtYWNoaW5l"},
     { "name" : "Stationary Bike", "description": "Sit on seat and press feet against pedals", "category": "Cardio", "difficulty": "Beginner", "image_url":"images/exercises/bicycle.jpg", "video_url": "https://www.youtube.com/watch?v=NwwDBARCGgo&pp=ygUaaG93IHRvIHVzZSBiaWN5Y2xlIG1hY2hpbmU%3D"},
     { "name" : "Bar Curl", "description": "Curl bar towards face while standing", "category": "Biceps", "difficulty": "Beginner", "image_url":"images/exercises/barcurl.jpg", "video_url": "https://www.youtube.com/watch?v=kwG2ipFRgfo&pp=ygUQYmFyIGN1cmwgdG90aXJhbA%3D%3D"}
+  ],
+
+  "defaultRequest": [
+    { "buddy" : "JFoo", "owner" : "ADAMLOSEWINS" }
   ]
 }

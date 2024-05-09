@@ -118,3 +118,11 @@ test('Test that the favorites page displays and users can remove favorites', asy
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
 });
+
+test('Test that adding buddy works and displays received buddy requests on the screen ', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoRequestsPage(testController);
+
+});

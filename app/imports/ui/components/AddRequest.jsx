@@ -30,7 +30,7 @@ const AddRequest = ({ buddy, owner }) => {
   let fRef = null;
   return (
     <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
-      <SubmitField value="Buddy Up" />
+      <SubmitField id="add-buddy" value="Buddy Up" />
       <HiddenField name="owner" value={owner} />
       <HiddenField name="buddy" value={buddy} />
       <ErrorsField />
