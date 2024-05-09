@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Profiles } from '../../api/profile/Profile.js';
 import { BuddyProfiles } from '../../api/profile/BuddyProfiles';
 import { Exercises } from '../../api/exercises/Exercises';
+import { Requests } from '../../api/requests/Requests';
 
 /* eslint-disable no-console */
 
@@ -29,5 +30,31 @@ if (Exercises.collection.find().count() === 0) {
   if (Meteor.settings.defaultExercises) {
     console.log('Creating default exercises.');
     Meteor.settings.defaultExercises.forEach(exercise => addExercise(exercise));
+  }
+
+  const addBuddy = (buddy) => {
+    console.log(`  Adding: ${buddy.lastName} (${buddy.email})`);
+    Profiles.collection.insert(buddy);
+    BuddyProfiles.collection.insert(buddy);
+  };
+
+  if (BuddyProfiles.collection.find().count() === 0) {
+    if (Meteor.settings.defaultBuddies) {
+      console.log('Creating default buddies.');
+      Meteor.settings.defaultBuddies.forEach(buddy => addBuddy(buddy));
+    }
+  }
+}
+
+const addRequest = (request) => {
+  console.log(`Adding: ${request.buddy}`);
+  Requests.collection.insert(request);
+
+};
+
+if (Requests.collection.find().count() === 0) {
+  if (Meteor.settings.defaultProfiles) {
+    console.log('Creating default request.');
+    Meteor.settings.defaultRequest.forEach(request => addRequest(request));
   }
 }

@@ -10,6 +10,7 @@ import { guidePage } from './guide.page';
 import { buddyupPage } from './buddyup.page';
 import { workoutschedulePage } from './workoutschedule.page';
 import { favoritesPage } from './favorites.page';
+import { requestsPage } from './requests.page';
 
 /* global fixture:false, test:false */
 
@@ -81,6 +82,7 @@ test('Test that the buddyup page works', async (testController) => {
   await navBar.isLoggedIn(testController, credentials.username);
   await navBar.gotoBuddyUpPage(testController);
   await buddyupPage.isDisplayed(testController);
+  await buddyupPage.addBuddy(testController);
 });
 
 // Test that the workout schedule page displays correctly
@@ -115,6 +117,17 @@ test('Test that the favorites page displays and users can remove favorites', asy
   await navBar.gotoFavoritesPage(testController);
   await favoritesPage.isDisplayed(testController);
   await favoritesPage.removeFavorite(testController);
+  await navBar.logout(testController);
+  await signoutPage.isDisplayed(testController);
+});
+
+test('Test accepting buddy request', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoRequestsPage(testController);
+  await requestsPage.isDisplayed(testController);
+  await requestsPage.addRequest(testController);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
 });

@@ -19,6 +19,7 @@ const ProfilesAdmin = ({ profile, collection }) => {
       <td>{profile.year}</td>
       <td>{profile.major}</td>
       <td>{profile.email}</td>
+      <td>{profile.username}</td>
       <td>{profile.interests}</td>
       <td>
         <Link to={`/edit/${profile.firstName}`}>Edit</Link>
@@ -38,6 +39,7 @@ ProfilesAdmin.propTypes = {
     year: PropTypes.string,
     major: PropTypes.string,
     email: PropTypes.string,
+    username: PropTypes.string,
     interests: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
