@@ -42,7 +42,7 @@ const AddBuddy = ({ buddy, owner }) => {
   let fRef = null;
   return (
     <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
-      <SubmitField value="Accept" />
+      <SubmitField id="accept-buddy" value="Accept" />
       <HiddenField name="owner" value={owner} />
       <HiddenField name="buddy" value={buddy} />
       <ErrorsField />

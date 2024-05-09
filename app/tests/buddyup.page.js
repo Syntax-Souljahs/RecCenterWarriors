@@ -10,6 +10,12 @@ class BuddyupPage {
   async isDisplayed(testController) {
     await testController.expect(this.pageSelector.exists).ok();
   }
+
+  async addBuddy(testController) {
+    await this.isDisplayed(testController);
+    await testController.click('#add-buddy');
+    await testController.click('.swal-button');
+  }
 }
 
 export const buddyupPage = new BuddyupPage();

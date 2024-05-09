@@ -11,9 +11,9 @@ class RequestsPage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  async removeFavorite(testController) {
+  async addRequest(testController) {
     await this.isDisplayed(testController);
-    await testController.click('#add-buddy');
+    await testController.click('#accept-buddy');
     await testController.click('.swal-button');
   }
 }
