@@ -15,7 +15,7 @@ const Footer = () => (
         {' '}
         <br />
         <a href="https://syntax-souljahs.github.io/" className="text-light">
-          Template Home
+          Home
           Page
         </a>
       </Col>
